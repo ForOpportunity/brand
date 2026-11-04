@@ -14,20 +14,34 @@
 <body>
 <a class="skip" href="#guide">Skip to the guidelines</a>
 
-<header class="masthead">
-  <div class="wrap">
-    <div class="brand">
-      <img src="assets/logo/gco-logo-full-color.svg" alt="For Opportunity">
-      <span class="ed">Brand guidelines · Edition 02 · October 2026</span>
-    </div>
-    <div class="actions">
-      <a class="btn btn-secondary btn-sm" href="assets/downloads/gco-logo-pack.zip" download>Download logo pack</a>
-      <button class="btn btn-primary btn-sm" type="button" data-copy-tokens>Copy tokens</button>
-    </div>
+<div class="progress" aria-hidden="true"><span></span></div>
+<aside class="sidebar" aria-label="Brand guide">
+  <nav class="toc" aria-label="Inside the guide">
+    <h2>Inside the guide</h2>
+    <ol>
+      <li><a href="#foundation">Our foundation</a></li>
+      <li><a href="#logo">Logo</a></li>
+      <li><a href="#color">Color</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#messaging">Messaging</a></li>
+      <li><a href="#photography">Photography</a></li>
+      <li><a href="#visual">Visual language</a></li>
+      <li><a href="#backgrounds">Background art</a></li>
+      <li><a href="#motion">Motion</a></li>
+      <li><a href="#social">Social templates</a></li>
+      <li><a href="#guardrails">Guardrails</a></li>
+    </ol>
+  </nav>
+  <div class="side-actions">
+    <a class="pill" href="assets/logo/gco-logo-full-color.svg" download>Logo SVG <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v10M3.5 7.5 8 12l4.5-4.5"/></svg></a>
+    <a class="pill" href="assets/downloads/gco-logo-pack.zip" download>Full logo pack <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v10M3.5 7.5 8 12l4.5-4.5"/></svg></a>
+    <button class="pill" type="button" data-copy-tokens>Copy tokens <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10"/></svg></button>
   </div>
-</header>
+</aside>
 
-<section class="cover" aria-labelledby="cover-title">
+<div class="page">
+<section class="cover" id="top" aria-labelledby="cover-title">
   <img class="cover-ring" src="assets/backgrounds/source/gco-ring.svg" alt="">
   <div class="wrap cover-in">
     <div class="cover-top"><span>Edition 02 · October 2026</span><span>Georgia Center for Opportunity</span></div>
@@ -44,24 +58,6 @@
 </section>
 
 <div class="wrap shell">
-  <nav class="toc" aria-label="Inside the guide">
-    <h2>Inside the guide</h2>
-    <ol>
-      <li><a href="#foundation"><span>01</span>Our foundation</a></li>
-      <li><a href="#logo"><span>02</span>Logo</a></li>
-      <li><a href="#color"><span>03</span>Color</a></li>
-      <li><a href="#typography"><span>04</span>Typography</a></li>
-      <li><a href="#voice"><span>05</span>Voice</a></li>
-      <li><a href="#messaging"><span>06</span>Messaging</a></li>
-      <li><a href="#photography"><span>07</span>Photography</a></li>
-      <li><a href="#visual"><span>08</span>Visual language</a></li>
-      <li><a href="#backgrounds"><span>09</span>Background art</a></li>
-      <li><a href="#motion"><span>10</span>Motion</a></li>
-      <li><a href="#social"><span>11</span>Social templates</a></li>
-      <li><a href="#guardrails"><span>12</span>Guardrails</a></li>
-    </ol>
-  </nav>
-
   <main id="guide">
 
 <!-- 01 FOUNDATION -->
@@ -111,9 +107,9 @@
   <div class="sec-head">
     <span class="sec-num">02 / Logo</span>
     <h2 id="h-logo">Logo</h2>
-    <p>Our stacked wordmark: "Georgia" set small above a fine rule, then "Center for Opportunity", with "Opportunity" carrying the most weight.</p>
+    <p>Our stacked wordmark: "Georgia" set small in gold, "Center for" between two fine rules, then "Opportunity" carrying the most weight.</p>
   </div>
-  <div class="note"><b>Interim artwork.</b> These vectors are a careful redraw of the logo on foropportunity.org. Replace them with the designer's original files when you have them. Keep the same file names and everything on this site updates.</div>
+  <div class="note"><b>Traced artwork.</b> These vectors are traced from the official logo image on foropportunity.org. Replace them with the designer's original files when you have them. Keep the same file names and everything on this site updates.</div>
   <div class="grid g2">
     <figure style="margin:0"><div class="logo-stage on-white"><img src="assets/logo/gco-logo-full-color.svg" alt="Full-color logo on white"></div>
       <figcaption class="stage-label"><span>Full color: white and light backgrounds (primary)</span><a href="assets/logo/gco-logo-full-color.svg" download>SVG</a></figcaption></figure>
@@ -466,6 +462,8 @@
     <span>Brand guidelines · Edition 02 · October 2026 · Questions go to the Communications team.</span>
   </div>
 </footer>
+
+</div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="assets/js/html2canvas.min.js" defer></script>

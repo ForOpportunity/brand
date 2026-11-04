@@ -20,7 +20,7 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 | `index.html` | All guide content (12 sections, Edition 02 built on the foropportunity.org design system: Inter, slate #2F4F68, orange #FFA149, teal #78B2B9) |
 | `assets/css/site.css` | Styles and design tokens |
 | `assets/js/site.js` | Palette data, contrast checker, social template editor and other interactions |
-| `assets/logo/` | Logo SVGs and PNGs (interim redraw; replace with official vectors when available, keeping the file names) |
+| `assets/logo/` | Logo SVGs and PNGs (traced from the official logo image on foropportunity.org; replace with the designer's original vectors when available, keeping the file names) |
 | `assets/backgrounds/` | Ring backgrounds (light, slate, transparent overlay) in 1:1, 4:5, 9:16 and 16:9 (SVG + PNG) |
 | `assets/examples/` | Current LinkedIn posts, shown for reference in the Social section |
 | `assets/fonts/` | Self-hosted Inter (SIL Open Font License) |

@@ -79,6 +79,15 @@
   $$("[data-copy-tokens]").forEach(function (b) { b.addEventListener("click", function () { copyText(tokensStr, b, "Tokens"); }); });
   $$("[data-copy-from]").forEach(function (b) { b.addEventListener("click", function () { copyText($("#" + b.getAttribute("data-copy-from")).textContent.trim(), b, "Copy"); }); });
 
+  /* ---------- scroll progress ---------- */
+  var bar = $(".progress");
+  if (bar) {
+    var tick = false;
+    var setP = function () { var h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty("--p", h > 0 ? Math.min(1, scrollY / h) : 0); tick = false; };
+    addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(setP); } }, { passive: true });
+    addEventListener("resize", setP); setP();
+  }
+
   /* ---------- TOC highlight ---------- */
   var links = $$(".toc a");
   if ("IntersectionObserver" in window) {
@@ -88,7 +97,7 @@
         links.forEach(function (a) {
           var on = a.getAttribute("href") === "#" + en.target.id;
           a.classList.toggle("on", on);
-          if (on) { a.setAttribute("aria-current", "true"); if (window.innerWidth < 980) a.scrollIntoView({ block: "nearest", inline: "center" }); } else a.removeAttribute("aria-current");
+          if (on) { a.setAttribute("aria-current", "true"); if (window.innerWidth <= 980) { var ol = a.closest("ol"); ol.scrollTo({ left: a.offsetLeft - (ol.clientWidth - a.offsetWidth) / 2, behavior: "smooth" }); } } else a.removeAttribute("aria-current");
         });
       });
     }, { rootMargin: "-30% 0px -60% 0px" });
