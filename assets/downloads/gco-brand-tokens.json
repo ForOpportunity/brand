@@ -1,0 +1,31 @@
+{
+  "name": "For Opportunity",
+  "edition": "02",
+  "color": {
+    "slate": "#2F4F68",
+    "light": "#FAF9F7",
+    "white": "#FFFFFF",
+    "orange": "#FFA149",
+    "teal": "#78B2B9",
+    "peach": "#FFBC7D",
+    "border": "#E6E9EC",
+    "borderHover": "#A3AFB7"
+  },
+  "font": {
+    "family": "Inter, system-ui, Arial, sans-serif",
+    "body": 400,
+    "medium": 500,
+    "headline": 600,
+    "headlineTracking": "-0.027em"
+  },
+  "radius": {
+    "sm": "8px",
+    "default": "20px",
+    "lg": "32px"
+  },
+  "button": {
+    "padding": "19px 32px",
+    "radius": "20px",
+    "font": "Inter 500 16px"
+  }
+}
