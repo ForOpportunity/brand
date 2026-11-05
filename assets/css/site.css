@@ -24,6 +24,7 @@ html{scroll-behavior:smooth;scroll-padding-top:24px}
 body{margin:0;background:var(--light);color:var(--body);font:400 17px/1.65 var(--font);-webkit-font-smoothing:antialiased;font-feature-settings:"cv11","ss01"}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
 img{max-width:100%;display:block}
+[hidden]{display:none!important}
 a{color:var(--slate);text-decoration:underline;text-decoration-color:var(--orange);text-decoration-thickness:2px;text-underline-offset:4px}
 a:hover{text-decoration-color:var(--slate)}
 :focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:6px}
@@ -359,6 +360,7 @@ pre.code{white-space:pre;font:13px/1.6 var(--mono);background:var(--slate-deep);
 .tpl .list li{font-size:62px;font-weight:600;letter-spacing:-.025em;line-height:1.1;display:flex;gap:32px;align-items:center}
 .tpl .list li i{flex:none;width:84px;height:84px;border-radius:24px;background:rgba(255,255,255,.12);display:grid;place-items:center;font:600 36px/1 var(--font);color:var(--peach);font-style:normal}
 .tpl .cta{align-self:flex-start;background:var(--orange);color:var(--ink);font-size:40px;font-weight:500;padding:34px 56px;border-radius:40px}
+.t-quote .logo{left:150px;bottom:110px;width:300px}
 .tpl .card-in{position:absolute;inset:64px;background:#fff;border-radius:48px}
 
 /* email */
