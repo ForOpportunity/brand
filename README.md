@@ -17,6 +17,8 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 
 | Path | What it is |
 | --- | --- |
+| `brand-guide.md` | The whole guide in plain text for AI tools (Claude, ChatGPT and others), with instructions for them. Linked from the "Using AI" section and `llms.txt` |
+| `llms.txt` | Points AI tools to `brand-guide.md` |
 | `index.html` | All guide content (14 sections, Edition 02 built on the foropportunity.org design system: Inter, slate #2F4F68, orange #FFA149, teal #78B2B9) |
 | `assets/css/site.css` | Styles and design tokens |
 | `assets/js/site.js` | Palette data, contrast checker, social template editor and other interactions |
@@ -27,6 +29,8 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 | `assets/downloads/` | Logo pack, background pack, tokens JSON, email starter |
 
 ## Updating
+
+- **Whenever you change the guide, make the same change in `brand-guide.md`.** It is the copy AI tools read, so it must match `index.html`. The website is the source of truth.
 
 - Change copy directly in `index.html`. Each section is marked with a comment such as `<!-- 06 MESSAGING -->`.
 - Change colors in the `PALETTE` list at the top of `assets/js/site.js` and in the `:root` block of `assets/css/site.css`.
