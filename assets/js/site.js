@@ -155,9 +155,11 @@
 
   /* ---------- social templates (1080px canvases) ---------- */
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-  function hl(s) { return esc(s).replace(/\*([^*]+)\*/g, '<span class="hl">$1</span>'); }
+  /* one span per word: html2canvas draws a wrapped inline border as one bar across the whole line */
+  function hl(s) { return esc(s).replace(/\*([^*]+)\*/g, function (m, t) { return t.split(/(\s+)/).map(function (w) { return /^\s+$/.test(w) || !w ? w : '<span class="hl">' + w + '</span>'; }).join(""); }); }
   function plain(s) { return String(s).replace(/\*/g, "").replace(/\s*\n\s*/g, " ").trim(); }
-  function logo(light) { return '<img class="logo" src="assets/logo/' + (light ? "gco-logo-left-aligned-color" : "gco-logo-left-aligned-white") + '.svg" alt="">'; }
+  /* PNG, not SVG: html2canvas draws SVGs without width/height oversized and cropped */
+  function logo(light) { return '<img class="logo" src="assets/logo/png/' + (light ? "gco-logo-left-aligned-color" : "gco-logo-left-aligned-white") + '-2000.png" alt="">'; }
 
   var TEMPLATES = [
     { id: "stat", label: "Big stat", h: 1080, photo: true, light: false,
@@ -222,7 +224,7 @@
     var n = slideCount(current), s = state[current.id]; if (s.slide > n - 1) s.slide = n - 1;
     vp.innerHTML = ""; vp.appendChild(buildTpl(current)); fit();
     var nav = $("#tpl-slides"); nav.hidden = n < 2; $("#tpl-slide-n").textContent = "Slide " + (s.slide + 1) + " of " + n;
-    $("#tpl-download").textContent = n > 1 ? "Download all slides" : "Download PNG";
+    $("#tpl-download").textContent = n > 1 ? "Download all slides (.zip)" : "Download PNG";
     $("#tpl-prev").disabled = s.slide === 0; $("#tpl-next").disabled = s.slide >= n - 1; vp.setAttribute("role", "img"); vp.setAttribute("aria-label", "Preview. " + altText()); }
   function fields() {
     var host = $("#tpl-fields"); host.innerHTML = "";
@@ -246,30 +248,63 @@
   $("#tpl-reset").addEventListener("click", function () { current.fields.forEach(function (f) { state[current.id].v[f[0]] = f[2]; }); fields(); draw(); toast("Text reset"); });
   $("#tpl-caption").addEventListener("click", function (e) { copyText(current.caption(state[current.id].v), e.currentTarget, "Caption"); });
   $("#tpl-alt").addEventListener("click", function (e) { copyText(altText(), e.currentTarget, "Image description"); });
-  $("#tpl-download").addEventListener("click", function () {
-    var st = $("#tpl-status");
-    if (!window.html2canvas) { st.textContent = "The image tool is still loading. Try again in a moment."; return; }
-    var n = slideCount(current), stamp = Date.now(), k = 0;
-    var next = function () { if (k < n) renderOne(k++).then(function () { setTimeout(next, 400); }); };
-    st.textContent = n > 1 ? "Rendering " + n + " slides…" : "Rendering PNG…";
-    next();
-    function renderOne(idx) {
-    var holder = document.createElement("div"); holder.style.cssText = "position:fixed;left:-30000px;top:0;width:1080px;height:" + current.h + "px;overflow:hidden";
-    var el = buildTpl(current, idx); holder.appendChild(el); document.body.appendChild(holder);
+  /* minimal zip writer (stored, no compression; PNGs are already compressed) */
+  var CRC = (function () { var t = [], c, n, k; for (n = 0; n < 256; n++) { c = n; for (k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+  function crc32(u8) { var c = 0xFFFFFFFF; for (var i = 0; i < u8.length; i++) c = CRC[(c ^ u8[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; }
+  function makeZip(files) {
+    var parts = [], central = [], offset = 0, enc = new TextEncoder();
+    var le = function (v, n) { var a = new Uint8Array(n); for (var i = 0; i < n; i++) a[i] = (v >>> (8 * i)) & 255; return a; };
+    files.forEach(function (f) {
+      var name = enc.encode(f.name), crc = crc32(f.data), size = f.data.length;
+      var common = [le(20, 2), le(0, 2), le(0, 2), le(0, 2), le(0x21, 2), le(crc, 4), le(size, 4), le(size, 4), le(name.length, 2), le(0, 2)];
+      var local = [le(0x04034b50, 4)].concat(common, [name, f.data]);
+      central.push([le(0x02014b50, 4), le(20, 2)].concat(common, [le(0, 2), le(0, 2), le(0, 2), le(0, 4), le(offset, 4), name]));
+      local.forEach(function (x) { parts.push(x); offset += x.length; });
+    });
+    var cdStart = offset, cdSize = 0;
+    central.forEach(function (c) { c.forEach(function (x) { parts.push(x); cdSize += x.length; }); });
+    parts.push(le(0x06054b50, 4), le(0, 2), le(0, 2), le(files.length, 2), le(files.length, 2), le(cdSize, 4), le(cdStart, 4), le(0, 2));
+    return new Blob(parts, { type: "application/zip" });
+  }
+  function saveBlob(blob, name) {
+    var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = name;
+    document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 3000);
+  }
+  function renderSlide(t, idx) {
+    var holder = document.createElement("div"); holder.style.cssText = "position:fixed;left:-30000px;top:0;width:1080px;height:" + t.h + "px;overflow:hidden";
+    var el = buildTpl(t, idx); holder.appendChild(el); document.body.appendChild(holder);
     /* html2canvas mis-places text when body has a tall line-height, so neutralize it during export */
     var prevLH = document.body.style.lineHeight; document.body.style.lineHeight = "normal";
     var done = function () { document.body.style.lineHeight = prevLH; if (holder.parentNode) document.body.removeChild(holder); };
-    return (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
-      return window.html2canvas(el, { scale: 1, width: 1080, height: current.h, backgroundColor: null, useCORS: true, logging: false });
+    var imgs = Array.prototype.slice.call(el.querySelectorAll("img")).map(function (im) { return im.complete ? Promise.resolve() : new Promise(function (r) { im.onload = im.onerror = r; }); });
+    return Promise.all(imgs.concat([document.fonts ? document.fonts.ready : Promise.resolve()])).then(function () {
+      return window.html2canvas(el, { scale: 1, width: 1080, height: t.h, backgroundColor: null, useCORS: true, logging: false });
     }).then(function (canvas) {
       done();
-      canvas.toBlob(function (blob) {
-        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "gco-" + current.id + "-" + stamp + (n > 1 ? "-" + ("0" + (idx + 1)).slice(-2) : "") + ".png";
-        document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-        st.textContent = n > 1 ? "Downloaded slide " + (idx + 1) + " of " + n + "." : "Downloaded " + a.download + ".";
-      }, "image/png");
-    }).catch(function () { done(); st.textContent = "Couldn't render the image. Reload the page and try again."; });
-    }
+      return new Promise(function (r) { canvas.toBlob(r, "image/png"); });
+    }, function (e) { done(); throw e; });
+  }
+  var busy = false;
+  $("#tpl-download").addEventListener("click", function () {
+    var st = $("#tpl-status"), btn = this, t = current;
+    if (busy) return;
+    if (!window.html2canvas) { st.textContent = "The image tool is still loading. Try again in a moment."; return; }
+    var n = slideCount(t), stamp = Date.now(), base = "gco-" + t.id + "-" + stamp, blobs = [];
+    busy = true; btn.disabled = true;
+    st.textContent = n > 1 ? "Rendering slide 1 of " + n + "…" : "Rendering PNG…";
+    var chain = Promise.resolve();
+    for (var i = 0; i < n; i++) (function (idx) {
+      chain = chain.then(function () { if (n > 1) st.textContent = "Rendering slide " + (idx + 1) + " of " + n + "…"; return renderSlide(t, idx); }).then(function (b) { blobs.push(b); });
+    })(i);
+    chain.then(function () {
+      if (n === 1) { saveBlob(blobs[0], base + ".png"); st.textContent = "Downloaded " + base + ".png."; return; }
+      return Promise.all(blobs.map(function (b) { return b.arrayBuffer(); })).then(function (bufs) {
+        var zip = makeZip(bufs.map(function (buf, idx) { return { name: base + "-" + ("0" + (idx + 1)).slice(-2) + ".png", data: new Uint8Array(buf) }; }));
+        saveBlob(zip, base + ".zip");
+        st.textContent = "Downloaded " + base + ".zip with all " + n + " slides.";
+      });
+    }).catch(function () { st.textContent = "Couldn't render the image. Reload the page and try again."; })
+      .then(function () { busy = false; btn.disabled = false; });
   });
   $("#tpl-prev").addEventListener("click", function () { state[current.id].slide--; draw(); });
   $("#tpl-next").addEventListener("click", function () { state[current.id].slide++; draw(); });
