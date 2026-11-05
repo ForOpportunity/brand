@@ -494,30 +494,57 @@
   <div class="sec-head">
     <span class="sec-num">13 / Social templates</span>
     <h2 id="h-social">Social templates</h2>
-    <p>Six templates built on the website system, including a multi-slide carousel. Edit the text, add a photo and download PNGs for LinkedIn, Instagram or Facebook.</p>
+    <p>Six templates built on the website system, including a multi-slide carousel. Pick a template, type your text, and download a PNG for LinkedIn, Instagram, or Facebook. Brand checks flag anything off-guide as you type. You can also save drafts, share a link, or download every size at once.</p>
   </div>
-  <div class="tabs" role="group" aria-label="Template" id="tpl-tabs"></div>
-  <div class="social">
-    <div><div class="tpl-viewport" id="tpl-viewport"></div>
-      <div class="slide-nav" id="tpl-slides" hidden><button class="btn btn-secondary btn-sm" type="button" id="tpl-prev">&larr; Previous</button><span id="tpl-slide-n" aria-live="polite"></span><button class="btn btn-secondary btn-sm" type="button" id="tpl-next">Next &rarr;</button></div></div>
-    <form class="editor" id="tpl-editor" autocomplete="off">
-      <div id="tpl-fields" style="display:grid;gap:14px"></div>
-      <p class="xs">Wrap a word in *asterisks* to underline it in orange. Press Enter for a new line.</p>
-      <div class="row">
-        <label class="btn btn-secondary btn-sm" for="tpl-photo" id="tpl-photo-label">Add photo</label>
-        <input id="tpl-photo" type="file" accept="image/*" hidden>
-        <button class="btn btn-secondary btn-sm" type="button" id="tpl-photo-clear">Remove photo</button>
+  <div class="sx" id="sx">
+    <div class="tabs sx-tabs" role="group" aria-label="Template" id="sx-tabs"></div>
+    <div class="sx-grid">
+      <div class="sx-stage">
+        <div class="sx-frame" id="sx-frame">
+          <canvas id="sx-canvas" role="img" aria-label="Post preview" width="1080" height="1080"></canvas>
+          <span class="sx-rendering" aria-hidden="true">Rendering…</span>
+          <p class="sx-off small">The preview couldn't load. Reload the page to try again.</p>
+        </div>
+        <div class="sx-slide-nav" id="sx-slide-nav" hidden>
+          <button class="btn btn-secondary btn-sm" type="button" id="sx-prev"><span aria-hidden="true">&larr;</span> Previous</button>
+          <span id="sx-slide-n" aria-live="polite"></span>
+          <button class="btn btn-secondary btn-sm" type="button" id="sx-next">Next <span aria-hidden="true">&rarr;</span></button>
+        </div>
+        <p class="xs sx-drag-hint" id="sx-drag-hint" hidden>Drag the photo to move it.</p>
+        <div class="sx-actions" aria-labelledby="sx-dl-h" role="group">
+          <h3 class="sx-legend" id="sx-dl-h">Download</h3>
+          <div class="row" id="sx-dl-main"></div>
+          <p class="xs sx-hint" id="sx-dl-hint"></p>
+          <button type="button" class="sx-checks-jump" id="sx-checks-jump" hidden>Brand checks <span class="sx-checks-sum" id="sx-checks-jump-sum"></span></button>
+          <div class="sx-dl-more" id="sx-dl-more-wrap">
+            <span class="sx-ctl-label" id="sx-dl-more-l">More downloads</span>
+            <div class="row" id="sx-dl-more" role="group" aria-labelledby="sx-dl-more-l"></div>
+          </div>
+          <div class="sx-dl-more">
+            <span class="sx-ctl-label" id="sx-copy-l">Post text</span>
+            <div class="row" role="group" aria-labelledby="sx-copy-l">
+              <button class="btn btn-secondary btn-sm" type="button" id="sx-copy-caption">Copy caption</button>
+              <button class="btn btn-secondary btn-sm" type="button" id="sx-copy-alt">Copy image description</button>
+            </div>
+          </div>
+          <p class="status" id="sx-status" role="status" aria-live="polite"></p>
+        </div>
       </div>
-      <div class="row">
-        <button class="btn btn-donate btn-sm" type="button" id="tpl-download">Download PNG</button>
-        <button class="btn btn-secondary btn-sm" type="button" id="tpl-reset">Reset text</button>
-      </div>
-      <div class="row">
-        <button class="btn btn-secondary btn-sm" type="button" id="tpl-caption">Copy caption</button>
-        <button class="btn btn-secondary btn-sm" type="button" id="tpl-alt">Copy image description</button>
-      </div>
-      <p class="status" id="tpl-status" role="status"></p>
-    </form>
+      <form class="editor sx-editor" id="sx-editor" autocomplete="off" novalidate>
+        <div class="sx-group" id="sx-format"></div>
+        <div class="sx-group" id="sx-photo" hidden></div>
+        <div class="sx-group" id="sx-text"></div>
+        <div class="sx-group" id="sx-slides" hidden></div>
+      </form>
+      <section class="sx-checks" id="sx-checks" aria-labelledby="sx-checks-h">
+        <div class="sx-checks-head"><h3 class="sx-legend" id="sx-checks-h" tabindex="-1">Brand checks</h3><span class="sx-checks-sum" id="sx-checks-sum" aria-live="polite"></span></div>
+        <div id="sx-issues"></div>
+      </section>
+      <details class="sx-more" id="sx-more">
+        <summary>Drafts and share link</summary>
+        <div class="sx-more-body" id="sx-more-body"></div>
+      </details>
+    </div>
   </div>
   <div>
     <h3 class="sub">Text on social graphics</h3>
@@ -632,7 +659,12 @@ Here's what I need: [describe the piece, who it's for, where it will appear and 
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="assets/js/html2canvas.min.js" defer></script>
 <script src="assets/js/site.js" defer></script>
+<script src="assets/js/social-core.js" defer></script>
+<script src="assets/js/social-render.js" defer></script>
+<script src="assets/js/social-checks.js" defer></script>
+<script src="assets/js/social-export.js" defer></script>
+<script src="assets/js/social-drafts.js" defer></script>
+<script src="assets/js/social-ui.js" defer></script>
 </body>
 </html>
