@@ -21,7 +21,8 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 | `llms.txt` | Points AI tools to `brand-guide.md` |
 | `index.html` | All guide content (14 sections, Edition 02 built on the foropportunity.org design system: Inter, slate #2F4F68, orange #FFA149, teal #78B2B9) |
 | `assets/css/site.css` | Styles and design tokens |
-| `assets/js/site.js` | Palette data, contrast checker, social template editor and other interactions |
+| `assets/js/site.js` | Palette data, contrast checker and other page interactions |
+| `assets/js/social-*.js` | Social template editor: `social-core.js` (sizes, templates, post model), `social-render.js` (draws posts on canvas), `social-checks.js` (brand checks), `social-export.js` (PNG, zip, PDF), `social-drafts.js` (drafts, share links, presets, captions), `social-ui.js` (the editor) |
 | `assets/logo/` | Logo SVGs and PNGs (traced from the official logo image on foropportunity.org; replace with the designer's original vectors when available, keeping the file names) |
 | `assets/backgrounds/` | Ring backgrounds (light, slate, transparent overlay) in 1:1, 4:5, 9:16 and 16:9 (SVG + PNG) |
 | `assets/examples/` | Current LinkedIn posts, shown for reference in the Social section |
@@ -34,5 +35,5 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 
 - Change copy directly in `index.html`. Each section is marked with a comment such as `<!-- 06 MESSAGING -->`.
 - Change colors in the `PALETTE` list at the top of `assets/js/site.js` and in the `:root` block of `assets/css/site.css`.
-- Change social templates in the `TEMPLATES` list in `assets/js/site.js`.
+- Change social templates, their fields and example text in `assets/js/social-core.js`; layouts are drawn in `social-render.js`; brand-check rules live in `social-checks.js`.
 - Or ask Claude in the "GCO Brand" project to make the change and send you updated files.

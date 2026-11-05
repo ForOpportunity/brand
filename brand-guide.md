@@ -268,7 +268,9 @@ Text on a 1080px-wide canvas (headlines, labels and buttons in Title Case; body 
 - Never set line spacing below 1.0.
 - Logo: left aligned, bottom left, aligned to the text margin. No ring art behind it.
 - Always add alt text that repeats every word on the image and briefly describes any photo.
-- Editable templates (big stat, quote, pillars, question, story, carousel) are at https://brand.foropportunity.org/#social
+- Editable templates are at https://brand.foropportunity.org/#social: big stat, quote, pillars, question, call to action and carousel. Each comes in square, portrait, story and LinkedIn link sizes, on a slate, off-white or photo background. Downloads come as a PNG, every size as a zip, or for carousels every slide as a zip or a PDF for LinkedIn.
+- The editor runs brand checks as you type (words to avoid, word list, names, numbers, capitalization, missing sources, character limits). Fix every "Fix before posting" item before publishing.
+- Program presets fill in approved copy for BETTER WORK, Raising Highly Capable Kids and the Alliance for Opportunity. Drafts can be saved in the browser or shared as a link (photos aren't included in links).
 
 ## 12. Guardrails
 
