@@ -13,26 +13,26 @@
     { id: "names",           severity: "error", description: "Names: never call the organization \"For Opportunity\"; BETTER WORK is always in capitals; the website is always lowercase (foropportunity.org)." },
     { id: "numbers",         severity: "warn",  description: "Numbers (Writing style): \"more than 2,000\" not \"2,000+\"; \"million\" not \"M\"; the % symbol not \"percent\"; commas in numbers above 999." },
     { id: "click-here",      severity: "warn",  description: "Links (Writing style): use descriptive words like \"learn more\", never \"click here\"." },
-    { id: "sentence-case",   severity: "warn",  description: "Capitalization (Typography, Writing style): every headline, label, button and line of text uses sentence case. Capitalize only the first word and proper nouns." },
+    { id: "sentence-case",   severity: "warn",  description: "Capitalization (Typography, Writing style): every headline, label, button, and line of text uses sentence case. Capitalize only the first word and proper nouns." },
     { id: "required",        severity: "error", description: "Required fields (Guardrails): every number needs a source and a year." },
     { id: "source-year",     severity: "warn",  description: "Sources (Guardrails): a source for a number needs a four-digit year." },
     { id: "char-limit",      severity: "warn",  description: "Length (Social media): keep each field within its character limit so text stays large and readable." },
     { id: "all-caps",        severity: "warn",  description: "All caps (Typography): avoid all caps except very short labels and BETTER WORK." },
     { id: "exclamation",     severity: "tip",   description: "Voice: hopeful and plain-spoken; use one exclamation mark at most per post." },
     { id: "first-names",     severity: "warn",  description: "Stories and consent (Guardrails): first names only, with a signed release." },
-    { id: "carousel-length", severity: "tip",   description: "Carousels: use 3 to 10 slides." },
+    { id: "carousel-length", severity: "tip",   description: "Carousels: use three to 10 slides." },
     { id: "carousel-end",    severity: "tip",   description: "Carousels: end with a Closing slide so the post ends with a next step." }
   ];
 
   /* ---------- word lists ---------- */
   var AVOID = [
-    { re: /\bthe\s+poor\b/gi,                              alt: "families, parents or Georgians" },
-    { re: /\bthe\s+needy\b/gi,                             alt: "families, parents or Georgians" },
+    { re: /\bthe\s+poor\b/gi,                              alt: "families, parents, or Georgians" },
+    { re: /\bthe\s+needy\b/gi,                             alt: "families, parents, or Georgians" },
     { re: /\bhand-?outs\b/gi,                              alt: "support" },
     { re: /\bvictims?\b/gi,                                alt: "people or families" },
     { re: /\bdependency\b/gi,                              alt: "the barrier you mean, e.g. benefit cliffs" },
     { re: /\bbroken\s+(?:famil(?:y|ies)|homes?)\b/gi,      alt: "families facing stress at home" },
-    { re: /\bat[-\s]risk\s+(?:kids|children|youth)\b/gi,   alt: "kids, children or young people" },
+    { re: /\bat[-\s]risk\s+(?:kids|children|youth)\b/gi,   alt: "kids, children, or young people" },
     { re: /\bgame[-\s]?changers?\b/gi,                     alt: "what changed and why it matters" },
     { re: /\bunprecedented\b/gi,                           alt: "what's new, with a source" },
     { re: /\b(?:liberals?|conservatives?)\b/gi,            alt: "nonpartisan wording such as \"lawmakers from both parties\"", soft: true }

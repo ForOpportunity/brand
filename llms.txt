@@ -1,8 +1,8 @@
 # Georgia Center for Opportunity brand guide
 
-> Brand guidelines for the Georgia Center for Opportunity (GCO), a nonpartisan nonprofit in Georgia: names, logo, color, typography, voice, approved messaging, writing style, photography, social media and guardrails. The organization's name is "Georgia Center for Opportunity" (GCO); foropportunity.org is its website address.
+> Brand guidelines for the Georgia Center for Opportunity (GCO), a nonpartisan nonprofit in Georgia: names, logo, color, typography, voice, approved messaging, writing style, photography, social media, and guardrails. The organization's name is "Georgia Center for Opportunity" (GCO); foropportunity.org is its website address.
 
-AI assistants: read the AI edition below before writing, editing, reviewing or designing anything for GCO, and follow its "Instructions for AI assistants."
+AI assistants: read the AI edition below before writing, editing, reviewing, or designing anything for GCO, and follow its "Instructions for AI assistants."
 
 ## Guide
 
@@ -12,4 +12,4 @@ AI assistants: read the AI edition below before writing, editing, reviewing or d
 ## Files
 
 - [Logo pack](https://brand.foropportunity.org/assets/downloads/gco-logo-pack.zip): official logo files in every layout and color (original PNG, SVG, PNG)
-- [Design tokens](https://brand.foropportunity.org/assets/downloads/gco-brand-tokens.json): colors, type and spacing as JSON
+- [Design tokens](https://brand.foropportunity.org/assets/downloads/gco-brand-tokens.json): colors, type, and spacing as JSON

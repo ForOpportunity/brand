@@ -280,9 +280,9 @@
       if (tid === "pillars" && replaceable(p, "items")) F.items = c.pillars;
       if (tid === "quote") {
         if (replaceable(p, "role")) F.role = c.role;
-        if (id === "rhck") { if (!F.q.trim()) { F.q = RHCK_QUOTE; if (!F.who.trim()) F.who = "RHCK Graduate"; } }
+        if (id === "rhck") { if (!F.q.trim()) { F.q = RHCK_QUOTE; if (!F.who.trim()) F.who = "RHCK graduate"; } }
         /* the stock quote is from an RHCK graduate: never leave it under another program */
-        else if (F.q === RHCK_QUOTE) { F.q = ""; if (F.who === "RHCK Graduate") F.who = ""; }
+        else if (F.q === RHCK_QUOTE) { F.q = ""; if (F.who === "RHCK Graduate" || F.who === "RHCK graduate") F.who = ""; }
       }
       if (tid === "carousel") p.slides.forEach(function (s) { if (s.type === "quote" && own(s.fields, "role") && replaceable({ template: "quote", fields: s.fields }, "role")) s.fields.role = c.role; });
       p.preset = id;

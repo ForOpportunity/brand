@@ -31,7 +31,7 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 
 ## Updating
 
-- **Whenever you change the guide, make the same change in `brand-guide.md`.** It is the copy AI tools read, so it must match `index.html`. The website is the source of truth.
+- **Whenever you change the guide, make the same change in `brand-guide.md`.** It is the copy AI tools read, so it must match `index.html`. The website is the source of truth. `CLAUDE.md` gives Claude this rule, and a project hook (`.claude/hooks/check-guide-sync.sh`) blocks Claude Code commits and pushes that change `index.html` or `assets/js/` without `brand-guide.md`.
 
 - Change copy directly in `index.html`. Each section is marked with a comment such as `<!-- 06 MESSAGING -->`.
 - Change colors in the `PALETTE` list at the top of `assets/js/site.js` and in the `:root` block of `assets/css/site.css`.

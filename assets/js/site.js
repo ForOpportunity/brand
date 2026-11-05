@@ -6,11 +6,11 @@
 
   /* ---------- palette: single source for swatches, contrast and tokens ---------- */
   var PALETTE = [
-    { id: "slate", name: "Opportunity Slate", hex: "#2F4F68", role: "Primary brand color: headlines, buttons, dark sections. The website's primary, headline and dark color.", text: "#FFFFFF", feature: true, src: "Website primary" },
+    { id: "slate", name: "Opportunity Slate", hex: "#2F4F68", role: "Primary brand color: headlines, buttons, dark sections. The website's primary, headline, and dark color.", text: "#FFFFFF", feature: true, src: "Website primary" },
     { id: "light", name: "Warm Off-White", hex: "#FAF9F7", role: "Page canvas and section backgrounds.", text: "#2F4F68", src: "Website light" },
     { id: "white", name: "White", hex: "#FFFFFF", role: "Cards, forms, alternating sections.", text: "#2F4F68", src: "Website white" },
-    { id: "orange", name: "Sunrise Orange", hex: "#FFA149", role: "Donate buttons, underlines, icons and one accent per screen. Never text on light.", text: "#2F4F68", feature: true, src: "Brand secondary" },
-    { id: "teal", name: "Coastal Teal", hex: "#78B2B9", role: "Quote marks, icon tiles and illustration.", text: "#2F4F68", src: "Website accent" },
+    { id: "orange", name: "Sunrise Orange", hex: "#FFA149", role: "Donate buttons, underlines, icons, and one accent per screen. Never text on light.", text: "#2F4F68", feature: true, src: "Brand secondary" },
+    { id: "teal", name: "Coastal Teal", hex: "#78B2B9", role: "Quote marks, icon tiles, and illustration.", text: "#2F4F68", src: "Website accent" },
     { id: "peach", name: "Peach", hex: "#FFBC7D", role: "Warm highlight on slate. The arrow's peach band fades toward #FFECDA.", text: "#2F4F68", src: "Website accent tint" },
     { id: "border", name: "Line", hex: "#E6E9EC", role: "Borders and dividers. Hover: #A3AFB7.", text: "#2F4F68", src: "Website border" }
   ];
@@ -56,15 +56,15 @@
 
   /* ---------- contrast table ---------- */
   var PAIRS = [
-    ["#2F4F68", "#FAF9F7", "Slate on Off-White", "Headlines, buttons, links"],
-    ["#FFFFFF", "#2F4F68", "White on Slate", "Text on dark sections and buttons"],
-    ["#1B2F3F", "#FFA149", "Dark text on Orange", "Donate button text"],
-    ["#FFBC7D", "#2F4F68", "Peach on Slate", "Labels and highlights on slate"],
-    ["#FFA149", "#2F4F68", "Orange on Slate", "Large text and icons only"],
-    ["#78B2B9", "#2F4F68", "Teal on Slate", "Large text (24px+, or 19px+ bold), icons and accents only"],
-    ["#FFA149", "#FFFFFF", "Orange on White", "Shapes only, never text"],
-    ["#78B2B9", "#FFFFFF", "Teal on White", "Shapes only, never text"],
-    ["#FFFFFF", "#FFA149", "White on Orange", "Never"]
+    ["#2F4F68", "#FAF9F7", "Slate on off-white", "Headlines, buttons, links"],
+    ["#FFFFFF", "#2F4F68", "White on slate", "Text on dark sections and buttons"],
+    ["#1B2F3F", "#FFA149", "Dark text on orange", "Donate button text"],
+    ["#FFBC7D", "#2F4F68", "Peach on slate", "Labels and highlights on slate"],
+    ["#FFA149", "#2F4F68", "Orange on slate", "Large text and icons only"],
+    ["#78B2B9", "#2F4F68", "Teal on slate", "Large text (24px or larger, or 19px or larger in bold), icons, and accents only"],
+    ["#FFA149", "#FFFFFF", "Orange on white", "Shapes only, never text"],
+    ["#78B2B9", "#FFFFFF", "Teal on white", "Shapes only, never text"],
+    ["#FFFFFF", "#FFA149", "White on orange", "Never"]
   ];
   var tb = $("#pairs tbody");
   PAIRS.forEach(function (p) {

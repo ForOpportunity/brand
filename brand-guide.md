@@ -8,15 +8,15 @@ This is a plain-text copy of the Georgia Center for Opportunity (GCO) brand guid
 
 ## Instructions for AI assistants
 
-Follow this guide for any content you write, edit, review or design for the Georgia Center for Opportunity.
+Follow this guide for any content you write, edit, review, or design for the Georgia Center for Opportunity.
 
 1. **Names.** The organization is the **Georgia Center for Opportunity**. Spell it out on first use, followed by "(GCO)" if you'll mention it again, then use "GCO." Never call the organization "For Opportunity"; foropportunity.org is only the website address, always lowercase.
-2. **Approved copy is verbatim.** When a piece needs a mission, one-liner, boilerplate, bio, program description or disclaimer, use the text in "Messaging" word for word. Don't paraphrase or "improve" it.
-3. **Never invent facts.** Don't make up statistics, rankings, dates, quotes, participant names or stories. Every number needs a source and a year. If something needs a source you don't have, write [SOURCE NEEDED] and tell the user.
-4. **Sentence case, always.** Every title, subtitle, headline, button and label is in sentence case, in every format: documents, reports, articles, emails, web pages, slides, flyers, signage and social graphics. Capitalize just the first word of each phrase plus proper nouns. Never use Title Case.
+2. **Approved copy is verbatim.** When a piece needs a mission, one-liner, boilerplate, bio, program description, or disclaimer, use the text in "Messaging" word for word. Don't paraphrase or "improve" it.
+3. **Never invent facts.** Don't make up statistics, rankings, dates, quotes, participant names, or stories. Every number needs a source and a year. If something needs a source you don't have, write [SOURCE NEEDED] and tell the user.
+4. **Sentence case, always.** Every title, subtitle, headline, button, and label is in sentence case, in every format: documents, reports, articles, emails, web pages, slides, flyers, signage, and social graphics. Capitalize just the first word of each phrase plus proper nouns. Never use Title Case.
 5. **Writing style is strict.** Apply every rule in "Writing style" (numbers, dates, serial comma, word list) to all prose.
-6. **Voice.** Hopeful, plain-spoken, evidence-led and respectful. Never use the words in "Words we avoid." Stay nonpartisan: never support or oppose candidates or parties.
-7. **Visuals.** Use only the exact hex colors listed here. Don't recreate, redraw or recolor the logo; point to the official files below. Never put the logo over the ring artwork. Text never gets shadows, outlines or other effects.
+6. **Voice.** Hopeful, plain-spoken, evidence-led, and respectful. Never use the words in "Words we avoid." Stay nonpartisan: never support or oppose candidates or parties.
+7. **Visuals.** Use only the exact hex colors listed here. Don't recreate, redraw, or recolor the logo; point to the official files below. Never put the logo over the ring artwork. Text never gets shadows, outlines, or other effects.
 8. **Protect people.** Use first names only for participants, and only with a signed release. Never name anyone under 18 in full. Never present an AI or stock image as a real participant.
 9. **When in doubt, flag it.** If a request conflicts with this guide, or the guide doesn't cover it, say so and suggest the closest on-brand option. Don't silently break a rule.
 
@@ -29,7 +29,7 @@ Follow this guide for any content you write, edit, review or design for the Geor
 **What we do:** We increase human flourishing by supporting the whole person, strengthening work, relationships, and upward mobility through policy reform, community programs, and local partnerships.
 
 **Pillars of impact**
-- Family stability: building healthy relationships, financial stability and supportive home environments.
+- Family stability: building healthy relationships, financial stability, and supportive home environments.
 - Economic mobility: helping parents find and keep work that sustains their families.
 - Child opportunity: equipping parents to give children the skills and support to thrive in school and life.
 - Community connection: fostering friendships and community ties that provide local support.
@@ -47,7 +47,7 @@ Follow this guide for any content you write, edit, review or design for the Geor
 - Team: We collaborate for the success of others.
 
 **Principles behind every piece**
-- The whole person: work, family, purpose and belonging all matter. We never reduce people to a statistic.
+- The whole person: work, family, purpose, and belonging all matter. We never reduce people to a statistic.
 - Evidence first: every claim has a source we can show, and we say what we don't know.
 - Real people, not political parties: we argue for opportunity-focused solutions, not parties or ideologies, and talk about the outcomes of policies and systems rather than people's motives.
 - Hope with a plan: we name the barrier, then show the path forward and the next step someone can take.
@@ -61,14 +61,14 @@ Use the logo on all external communications: web pages, social posts, documents 
 **Color versions** (centered with lines)
 - Full color, navy and gold, on white and light backgrounds (primary): https://brand.foropportunity.org/assets/logo/gco-logo-full-color.svg
 - Reverse, white and gold, on navy, slate and dark photos: https://brand.foropportunity.org/assets/logo/gco-logo-reverse.svg
-- One color, all navy, for single-ink print, embroidery and stamps: https://brand.foropportunity.org/assets/logo/gco-logo-one-color.svg
+- One color, all navy, for single-ink print, embroidery, and stamps: https://brand.foropportunity.org/assets/logo/gco-logo-one-color.svg
 - All white, for busy or dark photography: https://brand.foropportunity.org/assets/logo/gco-logo-white.svg
 
 **Layouts** (each in color and white; PNGs at /assets/logo/png/ and GCO's originals at /assets/logo/official/)
-- Centered with lines (primary): the default. Use when the logo stands on its own or everything around it is centered: covers, title slides, centered letterhead, signage and event materials.
+- Centered with lines (primary): the default. Use when the logo stands on its own or everything around it is centered: covers, title slides, centered letterhead, signage, and event materials.
 - Centered, no lines (gco-logo-centered-no-lines-color.svg / -white.svg): same uses as the primary, when the rules would crowd nearby text or edges, or print too thin.
-- Left aligned (gco-logo-left-aligned-color.svg / -white.svg): when the logo shares a left margin with text: social posts, document and letterhead headers, email headers and web pages.
-- Long horizontal (gco-logo-horizontal-color.svg / -white.svg): wide, short spaces: website headers, email footers, banners and lanyards.
+- Left aligned (gco-logo-left-aligned-color.svg / -white.svg): when the logo shares a left margin with text: social posts, document and letterhead headers, email headers, and web pages.
+- Long horizontal (gco-logo-horizontal-color.svg / -white.svg): wide, short spaces: website headers, email footers, banners, and lanyards.
 
 Centered or left aligned? Match the alignment of the layout around it.
 
@@ -87,14 +87,14 @@ Centered or left aligned? Match the alignment of the layout around it.
 **Rules**
 - Clear space: the height of the "O" in Opportunity on every side.
 - Minimum size: 160px wide on screen, 1.5 in wide in print.
-- Backgrounds: a clear area of white, off-white, navy, slate or a dark photo. Never over the ring (the "O" shape) or other artwork.
-- Don't stretch, squash, rotate or recolor it, add shadows or effects, or place it on a mid-tone or low-contrast background.
+- Backgrounds: a clear area of white, off-white, navy, slate, or a dark photo. Never over the ring (the "O" shape) or other artwork.
+- Don't stretch, squash, rotate, or recolor it, add shadows or effects, or place it on a mid-tone or low-contrast background.
 
 Full logo pack (originals, SVG, PNG): https://brand.foropportunity.org/assets/downloads/gco-logo-pack.zip
 
 ## 3. Names
 
-- **Georgia Center for Opportunity:** our full and primary public name, used in the logo, legal copy and first references. After the first reference, GCO is the accepted acronym. "The" may be used in running text: "I'm with the Georgia Center for Opportunity."
+- **Georgia Center for Opportunity:** our full and primary public name, used in the logo, legal copy, and first references. After the first reference, GCO is the accepted acronym. "The" may be used in running text: "I'm with the Georgia Center for Opportunity."
 - **Website:** always lowercase: foropportunity.org.
 - **Alliance for Opportunity:** spell out on first use and follow with "(A4O)" if you'll mention it again. After that, use "A4O" or "the Alliance."
 - **BETTER WORK:** all capital letters, always. No abbreviation.
@@ -116,22 +116,22 @@ Full logo pack (originals, SVG, PNG): https://brand.foropportunity.org/assets/do
 
 Balance: mostly off-white and white (about 55%), slate for type and structure (about 30%), teal about 10%, orange about 5% (one moment per screen).
 
-**Contrast pairings** (body text needs 4.5:1; large text, 24px+ or 19px bold, needs 3:1)
-- Slate on Off-White, 8.18:1: headlines, buttons, links.
-- White on Slate, 8.61:1: text on dark sections and buttons.
-- Dark text (#1B2F3F) on Orange, 6.85:1: donate button text.
-- Peach on Slate, 5.22:1: labels and highlights on slate.
-- Orange on Slate, 4.28:1: large text and icons only.
-- Teal on Slate, 3.64:1: large text, icons and accents only.
-- Orange on White (2.01:1) and Teal on White (2.37:1): shapes only, never text.
-- White on Orange (2.01:1): never.
+**Contrast pairings** (body text needs 4.5:1; large text, 24px or larger or 19px bold, needs 3:1)
+- Slate on off-white, 8.18:1: headlines, buttons, links.
+- White on slate, 8.61:1: text on dark sections and buttons.
+- Dark text (#1B2F3F) on orange, 6.85:1: donate button text.
+- Peach on slate, 5.22:1: labels and highlights on slate.
+- Orange on slate, 4.28:1: large text and icons only.
+- Teal on slate, 3.64:1: large text, icons, and accents only.
+- Orange on white (2.01:1) and teal on white (2.37:1): shapes only, never text.
+- White on orange (2.01:1): never.
 
 ## 5. Typography
 
 - **Inter** everywhere it's supported (free, SIL Open Font License: https://fonts.google.com/specimen/Inter). Weights: Regular 400 body, Medium 500 buttons and subheads, Semibold 600 headlines, Bold 700 rare emphasis.
 - **When Inter isn't available** (Mailchimp, PowerPoint, Google Slides): Helvetica, with the same sizes and weights (Bold for headlines, Regular for body). Use Arial where Helvetica isn't installed, as in PowerPoint on Windows. Don't use Open Sans or Novecento.
 - Headlines: Semibold, tracking −0.027em, line height 1.1–1.2. Body: Regular, line height about 1.6. Avoid all caps except very short labels.
-- **Capitalization:** sentence case for everything: titles, subtitles, headlines, H2s and H3s, buttons and labels, in documents, reports, web pages, emails, slides, flyers, signage and social graphics, e.g. "Learn more about our work." Capitalize just the first word of each phrase plus proper nouns (people, places, organizations, laws and programs, e.g. BETTER WORK, Raising Highly Capable Kids). Formal titles are capitalized only before a name; "Congress" is capitalized but "congressional" isn't.
+- **Capitalization:** sentence case for everything: titles, subtitles, headlines, H2s and H3s, buttons, and labels, in documents, reports, web pages, emails, slides, flyers, signage, and social graphics, e.g. "Learn more about our work." Capitalize just the first word of each phrase plus proper nouns (people, places, organizations, laws, and programs, e.g. BETTER WORK, Raising Highly Capable Kids). Formal titles are capitalized only before a name; "Congress" is capitalized but "congressional" isn't.
 - Type scale (web): Display 56–84px/600; H2 40–52px/600; H3 24–28px/600; Lead 20px/400; Body 16–17px/400; Button 16px/500; Label 13px/600.
 
 ## 6. Voice
@@ -148,7 +148,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 | Georgia has 275,000 open jobs. Why is getting one so hard? | Lazy policy is locking Georgians out of jobs. |
 | Parents in BETTER WORK found jobs that fit their families. | We rescued struggling parents from unemployment. |
 | Benefit cliffs can mean a raise leaves a family worse off. | The welfare trap keeps the poor dependent. |
-| This workshop transforms the way you connect with your kids. | We fix broken families. |
+| This class transforms the way you connect with your kids. | We fix broken families. |
 | Lawmakers from both parties backed the reform. | Finally, the other side came to its senses. |
 
 **Words we use:** families, flourish, opportunity, pathways, prosperity, whole person, dignity, purpose, belonging, barriers, Georgians, parents.
@@ -159,7 +159,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 
 **Core promise:** Empowering families to flourish across generations.
 
-**Story arc:** The need: overlapping barriers (stress at home, limited steady work and thin social support can keep poverty going across generations). Our approach: the whole person (policy solutions, community programs and partnerships that strengthen work, relationships, purpose and belonging). The outcome: durable prosperity (vibrant communities where every family can achieve its potential and break the cycle of poverty for good).
+**Story arc:** The need: overlapping barriers (stress at home, limited steady work, and thin social support can keep poverty going across generations). Our approach: the whole person (policy solutions, community programs, and partnerships that strengthen work, relationships, purpose, and belonging). The outcome: durable prosperity (vibrant communities where every family can achieve its potential and break the cycle of poverty for good).
 
 **One line, option 1:** We empower families to flourish across generations.
 
@@ -174,7 +174,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 **Openers by audience**
 - Donors: "Your gift helps a parent land work that sustains their family, and helps change the rules so the next parent doesn't hit the same wall."
 - Policymakers: "Here's what the data shows about how this rule affects working families in your district, and a practical fix."
-- Families and participants: "You know your goals. We'll walk alongside you with training, support and people who've been there."
+- Families and participants: "You know your goals. We'll walk alongside you with training, support, and people who've been there."
 - Partners: "You already serve your community. We bring proven programs and research so you can do more of what works."
 
 **Program descriptions**
@@ -214,7 +214,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 - Put a comma after a city and state in a sentence ("Communities around Atlanta, Georgia, experience …").
 - Spell out state names unless they're part of an address. Write "D.C." with two periods.
 
-**Headlines, links and voice**
+**Headlines, links, and voice**
 - Sentence case for all document titles and subtitles and for web page titles: capitalize just the first word in each phrase unless it's a proper noun. This applies to designed pieces too (reports, slides, flyers, social graphics).
 - Link descriptive words like "learn more" or "read the report," never "click here."
 - Use active voice whenever you can.
@@ -230,30 +230,31 @@ We sound like a neighbor who has done the research: warm about people and precis
 
 Real Georgians in real moments. Natural color, rounded corners (20px), room to breathe.
 
-- Our programs, our people: photograph RHCK classes, BETTER WORK cohorts and partner events. Use participants with signed releases before stock.
-- Natural and warm: daylight, true color, candid expressions. No heavy filters, duotones or color tints.
+- Our programs, our people: photograph RHCK classes, BETTER WORK cohorts, and partner events. Use participants with signed releases before stock.
+- Natural and warm: daylight, true color, and candid expressions. No heavy filters, duotones, or color tints.
 - Room for words: where text sits on a photo, add a slate gradient from the bottom, never a flat color wash.
-- Do show parents and children together, people at work, Georgia places (main streets, classrooms, churches, community centers), and the range of ages, races, family shapes and places we serve.
+- Do show parents and children together, people at work, Georgia places (main streets, classrooms, churches, community centers), and the range of ages, races, family shapes, and places we serve.
 - Don't show people as helpless or in distress, children's faces without a guardian's written consent, or staged stock poses. Never present an AI or stock image as a real participant.
+- AI images: label them as illustrative, and never pair one with a real person's name or quote.
 
 ## 10. Visual language and background art
 
-Soft, open and orderly: generous off-white space, 20px corners, thin borders and a few warm accents.
+Soft, open, and orderly: generous off-white space, 20px corners, thin borders, and a few warm accents.
 
 - The ring: a thick white ring kept very light (26% fading to 5% opacity), entering from the top-right corner. Our signature on slate. Never behind the logo.
 - The arrow: pale slate and peach bands stacking into an upward arrow. Our signature on light backgrounds.
-- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, cropped by the frame. Don't recolor, rotate, flip or tile them.
+- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, cropped by the frame. Don't recolor, rotate, flip, or tile them.
 - The orange underline: under one key word per headline, never the whole line.
 - Teal quote marks open testimonials.
 - Spacing on an 8px rhythm (8, 16, 20, 32, 48, 64). Corners: 20px default, 8px small chips, 32px large panels. Cards are white with a 1px border, never drop shadows.
 - Icons: simple line icons, rounded ends, 1.5–2px stroke at 24px, slate on teal-tint tiles. Don't mix icon sets.
-- Motion: calm and unhurried. Text rises into place; nothing bounces or spins. Respect reduced-motion settings.
+- Motion: calm and unhurried. Text rises into place; nothing bounces or spins. Respect reduced-motion settings. In video, keep captions on screen for at least three seconds.
 
 ## 11. Social media
 
 Sizes: feed 1080 × 1080; carousels 1080 × 1350 per slide; stories and reels 1080 × 1920; LinkedIn link image 1200 × 627.
 
-Text on a 1080px-wide canvas (headlines, labels, buttons and body text all in sentence case):
+Text on a 1080px-wide canvas (headlines, labels, buttons, and body text all in sentence case):
 
 | Element | Size | Weight | Line spacing |
 | --- | --- | --- | --- |
@@ -264,27 +265,29 @@ Text on a 1080px-wide canvas (headlines, labels, buttons and body text all in se
 | Body text | 40–44px | Regular 400 | 1.35 |
 | Button | 40px | Medium 500 | 1.0 |
 
-- No text effects: no shadows, outlines, glows or gradients on text. Get contrast from the background (solid slate, off-white or a darkened photo).
+- No text effects: no shadows, outlines, glows, or gradients on text. Get contrast from the background (solid slate, off-white, or a darkened photo).
 - Never set line spacing below 1.0.
 - Logo: left aligned, bottom left, aligned to the text margin. No ring art behind it.
 - Always add alt text that repeats every word on the image and briefly describes any photo.
-- Editable templates are at https://brand.foropportunity.org/#social: big stat, quote, pillars, question, call to action and carousel. Each comes in square, portrait, story and LinkedIn link sizes, on a slate, off-white or photo background. Downloads come as a PNG, every size as a zip, or for carousels every slide as a zip or a PDF for LinkedIn.
+- Editable templates are at https://brand.foropportunity.org/#social: big stat, quote, pillars, question, call to action, and carousel. Each comes in square, portrait, story, and LinkedIn link sizes, on a slate, off-white, or photo background. Downloads come as a PNG, every size as a zip, or for carousels every slide as a zip or a PDF for LinkedIn.
 - The editor runs brand checks as you type (words to avoid, word list, names, numbers, capitalization, missing sources, character limits). Fix every "Fix before posting" item before publishing.
-- Program presets fill in approved copy for BETTER WORK, Raising Highly Capable Kids and the Alliance for Opportunity. Drafts can be saved in the browser or shared as a link (photos aren't included in links).
+- Program presets fill in approved copy for BETTER WORK, Raising Highly Capable Kids, and the Alliance for Opportunity. Drafts can be saved in the browser or shared as a link (photos aren't included in links).
+- Older posts use a navy and gold palette with Poppins headlines. The templates move social onto the website system; finish any series that's already running in its current style.
 
 ## 12. Guardrails
 
-- Accessibility: text meets WCAG AA contrast; orange or teal is never text on light backgrounds. Every image has alt text and every video has captions. Color is never the only way information is shown.
+- Accessibility: text meets Web Content Accessibility Guidelines (WCAG) AA contrast; orange or teal is never text on light backgrounds. Every image has alt text and every video has captions. Color is never the only way information is shown.
 - Claims and data: every number has a source and a year we can link to. Write "helped" or "contributed to," never "caused," unless a study shows it.
 - Stories and consent: first names only, with a signed release on file. Anyone under 18 needs written guardian consent and is never named in full. Quotes can be trimmed for length but never changed in meaning.
-- Nonpartisan: as a 501(c)(3), we never endorse or oppose candidates or parties. We can discuss legislation and policy.
+- Nonpartisan: as a 501(c)(3), we never endorse or oppose candidates or parties. We can discuss legislation and policy. When in doubt, ask before you post.
+- Private information: donor records, participant details, children's information, and anything confidential stay out of AI tools, per GCO's AI use policy. If someone shares them with you, point this out and suggest they check with the Communications team.
 - Files and fonts: use only the logo files from this guide. Inter is free for partners and vendors; otherwise use Helvetica (Arial on Windows).
 
 **Ready to publish?**
-- Inter (or Helvetica), with sentence case for every title, headline, button and label.
+- Inter (or Helvetica), with sentence case for every title, headline, button, and label.
 - Slate leads, with orange used for one moment and never for text on light.
 - An approved logo file, with clear space and above minimum size.
 - Photos in natural color with 20px corners, and consent on file.
 - Every number has a source and year.
-- Copy that's hopeful, plain and nonpartisan, follows the writing style, and ends with a next step.
-- Alt text, captions and contrast checked.
+- Copy that's hopeful, plain, and nonpartisan, follows the writing style, and ends with a next step.
+- Alt text, captions, and contrast checked.
