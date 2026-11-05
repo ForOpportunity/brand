@@ -12,9 +12,8 @@
     { id: "word-list",       severity: "warn",  description: "Word list (Writing style): benefit cliffs; child care, day care, health care (two words); email; nonprofit; safety net; task force; midterm." },
     { id: "names",           severity: "error", description: "Names: never call the organization \"For Opportunity\"; BETTER WORK is always in capitals; the website is always lowercase (foropportunity.org)." },
     { id: "numbers",         severity: "warn",  description: "Numbers (Writing style): \"more than 2,000\" not \"2,000+\"; \"million\" not \"M\"; the % symbol not \"percent\"; commas in numbers above 999." },
-    { id: "click-here",      severity: "warn",  description: "Links (Writing style): use descriptive words like \"Learn More\", never \"click here\"." },
-    { id: "title-case",      severity: "warn",  description: "Capitalization (Typography): headlines, labels and buttons on social graphics use Title Case." },
-    { id: "sentence-case",   severity: "warn",  description: "Capitalization (Typography): body text and supporting lines use sentence case." },
+    { id: "click-here",      severity: "warn",  description: "Links (Writing style): use descriptive words like \"learn more\", never \"click here\"." },
+    { id: "sentence-case",   severity: "warn",  description: "Capitalization (Typography, Writing style): every headline, label, button and line of text uses sentence case. Capitalize only the first word and proper nouns." },
     { id: "required",        severity: "error", description: "Required fields (Guardrails): every number needs a source and a year." },
     { id: "source-year",     severity: "warn",  description: "Sources (Guardrails): a source for a number needs a four-digit year." },
     { id: "char-limit",      severity: "warn",  description: "Length (Social media): keep each field within its character limit so text stays large and readable." },
@@ -50,7 +49,7 @@
     { re: /\btask-?forces?\b/gi,        good: "task force" },
     { re: /\bmid-terms?\b/gi,           good: "midterm" }
   ];
-  /* lowercase is fine in Title Case for these, unless first or last */
+  /* short words that don't start a name */
   var MINOR = toSet("a an the and but or for nor so yet at by in of on to up as is if via vs per from with into onto than off en de");
   /* program and role words: "RHCK Graduate" or "Program Participant" is not a person's full name */
   var ROLE = toSet("graduate graduates grad participant participants parent parents mom mother father dad grandmother grandfather grandparent " +
@@ -59,7 +58,7 @@
     "founder owner worker resident trainee intern advocate friend supporter donor program initiative community church school " +
     "rhck better work raising highly capable kids alliance opportunity georgia center gco a4o jobs life atlanta county");
   /* proper names removed before judging sentence case, so they don't count as Title Case */
-  var PROPER = /Georgia Center for Opportunity|Alliance for Opportunity|Raising Highly Capable Kids|Jobs for Life|BETTER WORK|Better Work|United States|Census Bureau|Georgians?|Atlanta|America(?:ns?)?|Congress|Medicaid|Medicare|COVID-19|January|February|March|April|May|June|July|August|September|October|November|December|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|\bI\b/g;
+  var PROPER = /Georgia Center for Opportunity|Occupational Licensing Index|Alliance for Opportunity|Raising Highly Capable Kids|Jobs for Life|BETTER WORK|Better Work|United States|Census Bureau|Georgians?|Atlanta|America(?:ns?)?|Congress|Medicaid|Medicare|COVID-19|January|February|March|April|May|June|July|August|September|October|November|December|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|\bI\b/g;
 
   function toSet(s) { var o = {}; s.split(" ").forEach(function (w) { o[w] = true; }); return o; }
   function str(v) { return typeof v === "string" ? v : (typeof v === "number" && isFinite(v) ? String(v) : ""); }
@@ -111,7 +110,6 @@
     }
   }
   /* words before "For Opportunity" that make it read as a name ("Join For Opportunity", "the For Opportunity team") */
-  var NAME_CUE = toSet("join follow support visit at with from by the about to and team thanks thank meet contact");
   function checkNames(it, add) {
     var t = it.text, re = /For\s+Opportunity\b/g, m;
     /* "For Opportunity" as a name. Fine inside "Georgia Center for Opportunity", "Alliance for Opportunity" and the domain. */
@@ -123,8 +121,6 @@
       }
       if (/[@#\w]$/.test(before)) continue;                    /* part of a handle or word */
       var prev = before.replace(/\s+$/, "").split(/\s+/).pop() || "";
-      /* in Title Case, "Pathways For Opportunity" is a phrase; only flag where it reads as a name */
-      if (it.fd.case === "title" && prev && !NAME_CUE[prev.toLowerCase()] && !/[.!?:,;\u2014\u2013-]$/.test(prev)) continue;
       add("error", "names", "Don't call us " + q("For Opportunity") + ". Write " + q("Georgia Center for Opportunity") + " or " + q("GCO") + " (Names).");
       break;
     }
@@ -139,9 +135,7 @@
       if (it.key === "eyeb" || programAfter || /\b(?:in|joined|join|through|with|from)\s+$/i.test(preceded) && (capB || capW)) {
         add("error", "names", "Write " + q("BETTER WORK") + " in all capital letters, always (Names)."); return;
       }
-      if (it.fd.case === "title") {
-        if (capB && capW) { add("warn", "names", "If this means the program, write " + q("BETTER WORK") + " in all capitals (Names)."); return; }
-      } else if (capW || (capB && !atStart)) {
+      if (capW || (capB && !atStart)) {
         add("error", "names", "Write " + q("BETTER WORK") + " in all capital letters, always (Names)."); return;
       }
     }
@@ -170,7 +164,7 @@
   }
   function checkClickHere(it, add) {
     var m = /\bclick\s+here\b/i.exec(it.text);
-    if (m) add("warn", "click-here", "Use descriptive words like " + q("Learn More") + ", not " + q(m[0]) + " (Links).");
+    if (m) add("warn", "click-here", "Use descriptive words like " + q("learn more") + ", not " + q(m[0]) + " (Links).");
   }
   function checkAllCaps(it, add) {
     var words = it.text.replace(/BETTER\s+WORK/g, " ").split(/\s+/), run = 0, worst = 0;
@@ -180,7 +174,7 @@
       if (/[a-z]/.test(w)) { run = 0; continue; }
       run++; if (run > worst) worst = run;
     }
-    if (worst > 3) add("warn", "all-caps", "Avoid all caps except very short labels; use " + (it.fd.case === "title" ? "Title Case" : "sentence case") + " (Typography).");
+    if (worst > 3) add("warn", "all-caps", "Avoid all caps except very short labels; use sentence case (Typography).");
   }
   /* does this token end a sentence? "U.S.", "D.C.", "p.m." and "Dr." don't */
   function ends(tok) {
@@ -191,24 +185,6 @@
     return true;
   }
   function core(tok) { return tok.replace(/^[^A-Za-z0-9#$@]+/, "").replace(/[^A-Za-z0-9]+$/, ""); }
-  function checkTitle(it, add) {
-    var bad = [];
-    it.text.split("\n").forEach(function (line) {
-      var toks = line.split(/\s+/).filter(Boolean), first = true, lastWord = -1;
-      toks.forEach(function (tok, i) { if (/[A-Za-z0-9]/.test(tok)) lastWord = i; });
-      toks.forEach(function (tok, i) {
-        var c = core(tok), last = i === lastWord, isFirst = first;
-        first = ends(tok);                                  /* in "#31 in the U.S." neither "in" nor "for" starts a sentence */
-        if (!c || /[\d#$@\/]/.test(c) || /[A-Za-z]\.[A-Za-z]/.test(c)) return;      /* numbers, #31, URLs, e.g. */
-        var head = c.split("-")[0];
-        if (!/^[a-z]/.test(head) || /[A-Z]/.test(c)) return;                          /* capitalized, or iPhone-style */
-        /* a stat headline may continue the number: "45%" + "of Parents Turned Down a Raise" */
-        if (MINOR[head.toLowerCase()] && (!isFirst || (i === 0 && it.key === "head" && it.stat)) && !last) return;
-        bad.push(head);
-      });
-    });
-    if (bad.length) add("warn", "title-case", "Use Title Case here: capitalize " + list(bad) + " (Capitalization).");
-  }
   function checkSentence(it, add) {
     var eligible = 0, caps = 0;
     it.text.replace(PROPER, " ").split("\n").forEach(function (line) {
@@ -221,7 +197,9 @@
         eligible++; if (/^[A-Z]/.test(c)) caps++;
       });
     });
-    if (eligible >= 3 && caps >= 3 && caps / eligible >= 0.75) add("warn", "sentence-case", "Use sentence case here: capitalize only the first word and names (Capitalization).");
+    /* long text: mostly capitalized words; short headlines, labels and buttons: any run of capitalized words */
+    var short = (+it.fd.max || 0) <= 110;
+    if ((eligible >= 3 && caps >= 3 && caps / eligible >= 0.75) || (short && caps >= 1 && caps * 2 >= eligible)) add("warn", "sentence-case", "Use sentence case here: capitalize only the first word and names (Capitalization).");
   }
   function checkLimits(it, add) {
     var fd = it.fd, max = +fd.max || 0;
@@ -281,8 +259,7 @@
           checkNumbers(it, add);
           checkClickHere(it, add);
           if (key !== "stat") checkAllCaps(it, add);
-          if (fd.case === "title") checkTitle(it, add);
-          else if (fd.case === "sentence") checkSentence(it, add);
+          if (fd.case === "sentence") checkSentence(it, add);
           if (key === "who" && (post.template === "quote" || it.slideType === "quote")) checkWho(it, add);
           var b = it.text.match(/!/g);
           if (b) { bangs += b.length; if (bangs > 1 && bangAt === null) bangAt = it; }

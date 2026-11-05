@@ -44,19 +44,19 @@
 
   /* ---------- field definitions ----------
      kind: "input" (one line), "textarea" (multi-line), "lines" (one item per line)
-     case: "title" (Title Case: headlines, labels, buttons) | "sentence" | "none" (names, numbers)
+     case: "sentence" (headlines, labels, buttons, body: sentence case per the style guide) | "none" (names, numbers)
      max: soft character limit shown in the editor and checked by brand checks
      hl: true when *asterisks* underline words in orange */
   function f(key, label, kind, opt) { opt = opt || {}; return { key: key, label: label, kind: kind, case: opt.case || "none", max: opt.max || 0, required: !!opt.required, hl: !!opt.hl, hint: opt.hint || "" }; }
 
   /* ---------- slide types (carousel) ---------- */
   S.SLIDE_TYPES = {
-    cover: { id: "cover", label: "Cover",  fields: [f("head", "Headline", "textarea", { case: "title", max: 60, hl: true })], photo: true },
-    text:  { id: "text",  label: "Text",   fields: [f("head", "Heading", "input", { case: "title", max: 50, hl: true }), f("body", "Text", "textarea", { case: "sentence", max: 220, hl: true })], photo: false },
-    stat:  { id: "stat",  label: "Stat",   fields: [f("stat", "Number", "input", { max: 8 }), f("head", "What it means", "textarea", { case: "title", max: 90, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. U.S. Census Bureau, 2025" })], photo: false },
+    cover: { id: "cover", label: "Cover",  fields: [f("head", "Headline", "textarea", { case: "sentence", max: 60, hl: true })], photo: true },
+    text:  { id: "text",  label: "Text",   fields: [f("head", "Heading", "input", { case: "sentence", max: 50, hl: true }), f("body", "Text", "textarea", { case: "sentence", max: 220, hl: true })], photo: false },
+    stat:  { id: "stat",  label: "Stat",   fields: [f("stat", "Number", "input", { max: 8 }), f("head", "What it means", "textarea", { case: "sentence", max: 90, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. U.S. Census Bureau, 2025" })], photo: false },
     quote: { id: "quote", label: "Quote",  fields: [f("q", "Quote", "textarea", { case: "sentence", max: 200, hl: true }), f("who", "Name", "input", { max: 40 }), f("role", "Program or role", "input", { max: 50 })], photo: false },
-    photo: { id: "photo", label: "Photo",  fields: [f("head", "Caption on photo (optional)", "textarea", { case: "title", max: 60, hl: true })], photo: true },
-    end:   { id: "end",   label: "Closing", fields: [f("head", "Closing headline", "textarea", { case: "title", max: 50, hl: true }), f("cta", "Button", "input", { case: "title", max: 24 }), f("url", "Web address", "input", { max: 40 })], photo: false }
+    photo: { id: "photo", label: "Photo",  fields: [f("head", "Caption on photo (optional)", "textarea", { case: "sentence", max: 60, hl: true })], photo: true },
+    end:   { id: "end",   label: "Closing", fields: [f("head", "Closing headline", "textarea", { case: "sentence", max: 50, hl: true }), f("cta", "Button", "input", { case: "sentence", max: 24 }), f("url", "Web address", "input", { max: 40 })], photo: false }
   };
 
   /* ---------- templates ----------
@@ -64,31 +64,31 @@
      carousel templates keep their content in post.slides instead of post.fields. */
   S.TEMPLATES = [
     { id: "stat", label: "Big stat", sizes: ["square", "portrait", "story", "link"], backgrounds: ["slate", "photo", "light"], photo: true,
-      fields: [f("eyeb", "Label", "input", { case: "title", max: 40 }), f("stat", "Number", "input", { max: 8 }),
-               f("head", "Headline", "textarea", { case: "title", max: 110, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. Institute for Justice, 2026" })],
-      defaults: { eyeb: "Occupational Licensing Index", stat: "#31", head: "Georgia's Rank in 2026. How Many *Barriers* Stand Between Georgians and Work?", source: "" } },
+      fields: [f("eyeb", "Label", "input", { case: "sentence", max: 40 }), f("stat", "Number", "input", { max: 8 }),
+               f("head", "Headline", "textarea", { case: "sentence", max: 110, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. Institute for Justice, 2026" })],
+      defaults: { eyeb: "Occupational Licensing Index", stat: "#31", head: "Georgia's rank in 2026. How many *barriers* stand between Georgians and work?", source: "" } },
     { id: "quote", label: "Quote", sizes: ["square", "portrait", "story", "link"], backgrounds: ["light", "slate", "photo"], photo: true,
       fields: [f("q", "Quote", "textarea", { case: "sentence", max: 200, hl: true }), f("who", "Name", "input", { max: 40, hint: "First name only, with a signed release" }), f("role", "Program or role", "input", { max: 50 })],
-      defaults: { q: "This workshop doesn't just teach parenting tips. It *transforms* the way you connect with your kids.", who: "RHCK Graduate", role: "Raising Highly Capable Kids" } },
+      defaults: { q: "This workshop doesn't just teach parenting tips. It *transforms* the way you connect with your kids.", who: "RHCK graduate", role: "Raising Highly Capable Kids" } },
     { id: "pillars", label: "Pillars", sizes: ["square", "portrait", "story", "link"], backgrounds: ["slate", "photo", "light"], photo: true,
-      fields: [f("eyeb", "Label", "input", { case: "title", max: 40 }), f("items", "Items (one per line, up to 5)", "lines", { case: "title", max: 40, hl: true })],
-      defaults: { eyeb: "What We Do", items: "Family Stability\nEconomic Mobility\nChild Opportunity\nCommunity Connection" } },
+      fields: [f("eyeb", "Label", "input", { case: "sentence", max: 40 }), f("items", "Items (one per line, up to 5)", "lines", { case: "sentence", max: 40, hl: true })],
+      defaults: { eyeb: "What we do", items: "Family stability\nEconomic mobility\nChild opportunity\nCommunity connection" } },
     { id: "question", label: "Question", sizes: ["square", "portrait", "story", "link"], backgrounds: ["light", "slate", "photo"], photo: true,
-      fields: [f("eyeb", "Label", "input", { case: "title", max: 40 }), f("head", "Headline", "textarea", { case: "title", max: 70, hl: true }), f("sub", "Supporting line", "input", { case: "sentence", max: 80, hl: true })],
-      defaults: { eyeb: "Join the Conversation", head: "What Do *Families* Need to Thrive?", sub: "Tell us in the comments." } },
+      fields: [f("eyeb", "Label", "input", { case: "sentence", max: 40 }), f("head", "Headline", "textarea", { case: "sentence", max: 70, hl: true }), f("sub", "Supporting line", "input", { case: "sentence", max: 80, hl: true })],
+      defaults: { eyeb: "Join the conversation", head: "What do *families* need to thrive?", sub: "Tell us in the comments." } },
     { id: "cta", label: "Call to action", sizes: ["story", "portrait", "square", "link"], backgrounds: ["slate", "photo", "light"], photo: true,
-      fields: [f("eyeb", "Label", "input", { case: "title", max: 40 }), f("head", "Headline", "textarea", { case: "title", max: 70, hl: true }),
-               f("sub", "Text", "textarea", { case: "sentence", max: 160, hl: true }), f("cta", "Button", "input", { case: "title", max: 24 })],
-      defaults: { eyeb: "BETTER WORK", head: "A Job Can Provide *Purpose*, Stability and a Path Forward", sub: "We connect job-seekers with training, support services and career pathways through local partners.", cta: "Learn More" } },
+      fields: [f("eyeb", "Label", "input", { case: "sentence", max: 40 }), f("head", "Headline", "textarea", { case: "sentence", max: 70, hl: true }),
+               f("sub", "Text", "textarea", { case: "sentence", max: 160, hl: true }), f("cta", "Button", "input", { case: "sentence", max: 24 })],
+      defaults: { eyeb: "BETTER WORK", head: "A job can provide *purpose*, stability, and a path forward", sub: "We connect job-seekers with training, support services, and career pathways through local partners.", cta: "Learn more" } },
     { id: "carousel", label: "Carousel", carousel: true, sizes: ["portrait", "square"], backgrounds: ["slate", "light"], photo: false,
-      fields: [f("eyeb", "Series label", "input", { case: "title", max: 40 })],
-      defaults: { eyeb: "Benefit Cliffs" },
+      fields: [f("eyeb", "Series label", "input", { case: "sentence", max: 40 })],
+      defaults: { eyeb: "Benefit cliffs" },
       slides: [
-        { type: "cover", fields: { head: "What Is a *Benefit Cliff*?" } },
-        { type: "text", fields: { head: "When a Raise Costs You", body: "A small pay increase can push a family just past an eligibility line, so they lose more in support than they gain in wages." } },
-        { type: "text", fields: { head: "Why It Matters", body: "Parents turn down raises and extra hours to protect their family's benefits. Work stops paying." } },
-        { type: "text", fields: { head: "A Better Path", body: "Phasing benefits out gradually lets families keep more of every raise as they move toward stability." } },
-        { type: "end", fields: { head: "Let's Make *Work Pay*", cta: "Learn More", url: "foropportunity.org" } }
+        { type: "cover", fields: { head: "What is a *benefit cliff*?" } },
+        { type: "text", fields: { head: "When a raise costs you", body: "A small pay increase can push a family just past an eligibility line, so they lose more in support than they gain in wages." } },
+        { type: "text", fields: { head: "Why it matters", body: "Parents turn down raises and extra hours to protect their family's benefits. Work stops paying." } },
+        { type: "text", fields: { head: "A better path", body: "Phasing benefits out gradually lets families keep more of every raise as they move toward stability." } },
+        { type: "end", fields: { head: "Let's make *work pay*", cta: "Learn more", url: "foropportunity.org" } }
       ] }
   ];
   S.MAX_SLIDES = 10;
@@ -111,7 +111,7 @@
   S.defaultSlide = function (type) {
     var t = S.SLIDE_TYPES[type], o = { type: type, fields: {}, photo: S.emptyPhoto() };
     t.fields.forEach(function (fd) { o.fields[fd.key] = ""; });
-    if (type === "end") { o.fields.cta = "Learn More"; o.fields.url = "foropportunity.org"; }
+    if (type === "end") { o.fields.cta = "Learn more"; o.fields.url = "foropportunity.org"; }
     return o;
   };
   S.defaultPost = function (templateId) {

@@ -13,7 +13,7 @@ Follow this guide for any content you write, edit, review or design for the Geor
 1. **Names.** The organization is the **Georgia Center for Opportunity**. Spell it out on first use, followed by "(GCO)" if you'll mention it again, then use "GCO." Never call the organization "For Opportunity"; foropportunity.org is only the website address, always lowercase.
 2. **Approved copy is verbatim.** When a piece needs a mission, one-liner, boilerplate, bio, program description or disclaimer, use the text in "Messaging" word for word. Don't paraphrase or "improve" it.
 3. **Never invent facts.** Don't make up statistics, rankings, dates, quotes, participant names or stories. Every number needs a source and a year. If something needs a source you don't have, write [SOURCE NEEDED] and tell the user.
-4. **Which case rule applies.** Designed pieces (social graphics, slides, flyers, signage, buttons and labels) use Title Case for headlines. Written pieces (documents, reports, articles, emails and web page titles) use sentence case. Body text is always sentence case.
+4. **Sentence case, always.** Every title, subtitle, headline, button and label is in sentence case, in every format: documents, reports, articles, emails, web pages, slides, flyers, signage and social graphics. Capitalize just the first word of each phrase plus proper nouns. Never use Title Case.
 5. **Writing style is strict.** Apply every rule in "Writing style" (numbers, dates, serial comma, word list) to all prose.
 6. **Voice.** Hopeful, plain-spoken, evidence-led and respectful. Never use the words in "Words we avoid." Stay nonpartisan: never support or oppose candidates or parties.
 7. **Visuals.** Use only the exact hex colors listed here. Don't recreate, redraw or recolor the logo; point to the official files below. Never put the logo over the ring artwork. Text never gets shadows, outlines or other effects.
@@ -28,13 +28,13 @@ Follow this guide for any content you write, edit, review or design for the Geor
 
 **What we do:** We increase human flourishing by supporting the whole person, strengthening work, relationships, and upward mobility through policy reform, community programs, and local partnerships.
 
-**Pillars of Impact**
-- Family Stability: building healthy relationships, financial stability and supportive home environments.
-- Economic Mobility: helping parents find and keep work that sustains their families.
-- Child Opportunity: equipping parents to give children the skills and support to thrive in school and life.
-- Community Connection: fostering friendships and community ties that provide local support.
+**Pillars of impact**
+- Family stability: building healthy relationships, financial stability and supportive home environments.
+- Economic mobility: helping parents find and keep work that sustains their families.
+- Child opportunity: equipping parents to give children the skills and support to thrive in school and life.
+- Community connection: fostering friendships and community ties that provide local support.
 
-**How We Make a Difference**
+**How we make a difference**
 - Policy: research, policy solutions, and coalition-building on safety net reform, benefit cliffs, and pathways to work.
 - Programs: replicable programs on the ground, including BETTER WORK and Raising Highly Capable Kids.
 - Partnerships: addressing poverty isn't a solo endeavor. We work alongside groups already serving their communities.
@@ -131,7 +131,7 @@ Balance: mostly off-white and white (about 55%), slate for type and structure (a
 - **Inter** everywhere it's supported (free, SIL Open Font License: https://fonts.google.com/specimen/Inter). Weights: Regular 400 body, Medium 500 buttons and subheads, Semibold 600 headlines, Bold 700 rare emphasis.
 - **When Inter isn't available** (Mailchimp, PowerPoint, Google Slides): Helvetica, with the same sizes and weights (Bold for headlines, Regular for body). Use Arial where Helvetica isn't installed, as in PowerPoint on Windows. Don't use Open Sans or Novecento.
 - Headlines: Semibold, tracking −0.027em, line height 1.1–1.2. Body: Regular, line height about 1.6. Avoid all caps except very short labels.
-- **Capitalization:** Title Case for titles and headlines in designed pieces (display text, H2, H3, buttons and labels on social graphics, slides, flyers, signage and email buttons), e.g. "Learn More About Our Work." Sentence case for leads and body text everywhere, and for titles of written pieces (documents, reports, articles, web page titles), e.g. "How benefit cliffs hold families back."
+- **Capitalization:** sentence case for everything: titles, subtitles, headlines, H2s and H3s, buttons and labels, in documents, reports, web pages, emails, slides, flyers, signage and social graphics, e.g. "Learn more about our work." Capitalize just the first word of each phrase plus proper nouns (people, places, organizations, laws and programs, e.g. BETTER WORK, Raising Highly Capable Kids). Formal titles are capitalized only before a name; "Congress" is capitalized but "congressional" isn't.
 - Type scale (web): Display 56–84px/600; H2 40–52px/600; H3 24–28px/600; Lead 20px/400; Body 16–17px/400; Button 16px/500; Label 13px/600.
 
 ## 6. Voice
@@ -215,7 +215,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 - Spell out state names unless they're part of an address. Write "D.C." with two periods.
 
 **Headlines, links and voice**
-- Sentence case for document titles and subtitles and for web page titles. Designed pieces use Title Case (see Typography).
+- Sentence case for all document titles and subtitles and for web page titles: capitalize just the first word in each phrase unless it's a proper noun. This applies to designed pieces too (reports, slides, flyers, social graphics).
 - Link descriptive words like "learn more" or "read the report," never "click here."
 - Use active voice whenever you can.
 
@@ -253,7 +253,7 @@ Soft, open and orderly: generous off-white space, 20px corners, thin borders and
 
 Sizes: feed 1080 × 1080; carousels 1080 × 1350 per slide; stories and reels 1080 × 1920; LinkedIn link image 1200 × 627.
 
-Text on a 1080px-wide canvas (headlines, labels and buttons in Title Case; body text in sentence case):
+Text on a 1080px-wide canvas (headlines, labels, buttons and body text all in sentence case):
 
 | Element | Size | Weight | Line spacing |
 | --- | --- | --- | --- |
@@ -281,7 +281,7 @@ Text on a 1080px-wide canvas (headlines, labels and buttons in Title Case; body 
 - Files and fonts: use only the logo files from this guide. Inter is free for partners and vendors; otherwise use Helvetica (Arial on Windows).
 
 **Ready to publish?**
-- Inter (or Helvetica), with Title Case headlines on designed pieces and sentence case on written ones.
+- Inter (or Helvetica), with sentence case for every title, headline, button and label.
 - Slate leads, with orange used for one moment and never for text on light.
 - An approved logo file, with clear space and above minimum size.
 - Photos in natural color with 20px corners, and consent on file.

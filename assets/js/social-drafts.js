@@ -248,14 +248,14 @@
   var RHCK_QUOTE = "This workshop doesn't just teach parenting tips. It *transforms* the way you connect with your kids.";
   var PRESET_COPY = {
     betterwork: { label: "BETTER WORK", role: "BETTER WORK",
-      cta: { head: "A Job Can Provide *Purpose*, Stability and a Path Forward", sub: "We connect job-seekers with training, support services and career pathways through local partners.", cta: "Learn More" },
-      pillars: "Build Confidence\nDiscover Purpose\nDevelop Skills\nSteady, Meaningful Work" },
+      cta: { head: "A job can provide *purpose*, stability, and a path forward", sub: "We connect job-seekers with training, support services, and career pathways through local partners.", cta: "Learn more" },
+      pillars: "Build confidence\nDiscover purpose\nDevelop skills\nSteady, meaningful work" },
     rhck: { label: "Raising Highly Capable Kids", role: "Raising Highly Capable Kids",
-      cta: { head: "A Free, 10-Session Program for *Parents*", sub: "Gives parents a supportive community and the tools to strengthen relationships and help their children grow into confident, caring, and capable adults.", cta: "Learn More" },
-      pillars: "A Free, 10-Session Program\nA Supportive Community\nTools to Strengthen Relationships\nIn Partnership With Local Organizations" },
+      cta: { head: "A free, 10-session program for *parents*", sub: "Gives parents a supportive community and the tools to strengthen relationships and help their children grow into confident, caring, and capable adults.", cta: "Learn more" },
+      pillars: "A free, 10-session program\nA supportive community\nTools to strengthen relationships\nIn partnership with local organizations" },
     a4o: { label: "Alliance for Opportunity", role: "Alliance for Opportunity",
-      cta: { head: "Refocus the Safety Net on *Work*", sub: "A multi-state, nonprofit coalition that works with state and federal leaders.", cta: "Learn More" },
-      pillars: "Work\nFamily Stability\nDignity\nUpward Mobility" }
+      cta: { head: "Refocus the safety net on *work*", sub: "A multi-state, nonprofit coalition that works with state and federal leaders.", cta: "Learn more" },
+      pillars: "Work\nFamily stability\nDignity\nUpward mobility" }
   };
   function stock(tid, key) {
     var t = S.template(tid), vals = [""];
