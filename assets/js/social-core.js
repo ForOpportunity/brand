@@ -23,7 +23,8 @@
     font: "Inter",
     weights: { body: 400, medium: 500, headline: 600 },
     tracking: -0.027,                                   /* em, headlines */
-    photoOverlay: [[0, "rgba(31,53,71,0.35)"], [0.75, "rgba(31,53,71,0.88)"]], /* top -> bottom */
+    /* top -> bottom. Strong enough from the top that labels high in the text block stay readable on bright photos */
+    photoOverlay: [[0, "rgba(31,53,71,0.55)"], [0.45, "rgba(31,53,71,0.82)"], [1, "rgba(31,53,71,0.92)"]],
     assets: {
       logo: { light: "assets/logo/png/gco-logo-left-aligned-color-2000.png", dark: "assets/logo/png/gco-logo-left-aligned-white-2000.png" },
       arrow: { square: "assets/backgrounds/light-arrow-square.svg", portrait: "assets/backgrounds/light-arrow-portrait.svg",
