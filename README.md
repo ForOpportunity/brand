@@ -1,4 +1,4 @@
-# For Opportunity brand guidelines
+# Georgia Center for Opportunity brand guidelines
 
 Static brand guide for Georgia Center for Opportunity, built to be hosted on GitHub Pages. No build step needed.
 
@@ -17,7 +17,7 @@ Static brand guide for Georgia Center for Opportunity, built to be hosted on Git
 
 | Path | What it is |
 | --- | --- |
-| `index.html` | All guide content (12 sections, Edition 02 built on the foropportunity.org design system: Inter, slate #2F4F68, orange #FFA149, teal #78B2B9) |
+| `index.html` | All guide content (14 sections, Edition 02 built on the foropportunity.org design system: Inter, slate #2F4F68, orange #FFA149, teal #78B2B9) |
 | `assets/css/site.css` | Styles and design tokens |
 | `assets/js/site.js` | Palette data, contrast checker, social template editor and other interactions |
 | `assets/logo/` | Logo SVGs and PNGs (traced from the official logo image on foropportunity.org; replace with the designer's original vectors when available, keeping the file names) |

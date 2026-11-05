@@ -1,4 +1,4 @@
-/* For Opportunity brand guide: interactions (Edition 02, website system) */
+/* Georgia Center for Opportunity brand guide: interactions (Edition 02, website system) */
 (function () {
   "use strict";
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -15,7 +15,7 @@
     { id: "border", name: "Line", hex: "#E6E9EC", role: "Borders and dividers. Hover: #A3AFB7.", text: "#2F4F68", src: "Website border" }
   ];
   var tokens = {
-    name: "For Opportunity", edition: "02", version: "2.0.0",
+    name: "Georgia Center for Opportunity", edition: "02", version: "2.0.0",
     color: {}, font: { family: "Inter, system-ui, Arial, sans-serif", weights: { body: 400, medium: 500, headline: 600 }, headlineTracking: "-0.027em", headlineLineHeight: 1.2, bodyLineHeight: 1.65 },
     radius: { sm: "8px", default: "20px", lg: "32px" },
     button: { font: "Inter 500 16px", padding: "19px 32px", radius: "20px", textTransform: "none" },
@@ -61,6 +61,7 @@
     ["#1B2F3F", "#FFA149", "Dark text on Orange", "Donate button text"],
     ["#FFBC7D", "#2F4F68", "Peach on Slate", "Labels and highlights on slate"],
     ["#FFA149", "#2F4F68", "Orange on Slate", "Large text and icons only"],
+    ["#78B2B9", "#2F4F68", "Teal on Slate", "Large text (24px+, or 19px+ bold), icons and accents only"],
     ["#FFA149", "#FFFFFF", "Orange on White", "Shapes only, never text"],
     ["#78B2B9", "#FFFFFF", "Teal on White", "Shapes only, never text"],
     ["#FFFFFF", "#FFA149", "White on Orange", "Never"]
@@ -80,7 +81,7 @@
   $$("[data-copy-from]").forEach(function (b) { b.addEventListener("click", function () { copyText($("#" + b.getAttribute("data-copy-from")).textContent.trim(), b, "Copy"); }); });
 
   /* ---------- scroll progress ---------- */
-  var bar = $(".progress");
+  var bar = $(".scroll-progress");
   if (bar) {
     var tick = false;
     var setP = function () { var h = document.documentElement.scrollHeight - innerHeight; bar.style.setProperty("--p", h > 0 ? Math.min(1, scrollY / h) : 0); tick = false; };
@@ -156,11 +157,11 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function hl(s) { return esc(s).replace(/\*([^*]+)\*/g, '<span class="hl">$1</span>'); }
   function plain(s) { return String(s).replace(/\*/g, "").replace(/\s*\n\s*/g, " ").trim(); }
-  function logo(light) { return '<img class="logo" src="assets/logo/' + (light ? "gco-logo-full-color" : "gco-logo-reverse") + '.svg" alt="">'; }
+  function logo(light) { return '<img class="logo" src="assets/logo/' + (light ? "gco-logo-left-aligned-color" : "gco-logo-left-aligned-white") + '.svg" alt="">'; }
 
   var TEMPLATES = [
     { id: "stat", label: "Big stat", h: 1080, photo: true, light: false,
-      fields: [["eyeb", "Label", "Occupational Licensing Index", "input"], ["stat", "Number", "#31", "input"], ["head", "Headline", "Georgia's rank in 2026. How many *barriers* stand between Georgians and work?", "textarea"]],
+      fields: [["eyeb", "Label", "Occupational Licensing Index", "input"], ["stat", "Number", "#31", "input"], ["head", "Headline", "Georgia's Rank in 2026. How Many *Barriers* Stand Between Georgians and Work?", "textarea"]],
       render: function (v) { return '<div class="content"><div class="eyeb">' + esc(v.eyeb) + '</div><div class="stat">' + esc(v.stat) + '</div><div class="head" style="font-size:64px;line-height:1.15">' + hl(v.head) + '</div></div>'; },
       caption: function (v) { return plain(v.eyeb) + ": " + plain(v.stat) + ". " + plain(v.head) + " Read our analysis at foropportunity.org"; } },
     { id: "quote", label: "Quote", h: 1080, photo: false, light: true,
@@ -168,35 +169,61 @@
       render: function (v) { return '<img class="art" src="assets/backgrounds/light-arrow-square.svg" alt=""><div class="card-in"></div><div class="content" style="padding:150px 150px 260px;justify-content:center;gap:48px"><img class="qmark" src="assets/art/quote-open.svg" alt=""><div class="q" style="color:#2F4F68">' + hl(v.q) + '</div><div class="attr">' + esc(v.who) + '<span>' + esc(v.role) + '</span></div></div>'; },
       caption: function (v) { return "“" + plain(v.q) + "” (" + plain(v.who) + ", " + plain(v.role) + ") Learn more at foropportunity.org"; } },
     { id: "pillars", label: "Pillars", h: 1080, photo: true, light: false,
-      fields: [["eyeb", "Label", "What we do", "input"], ["items", "Items (one per line)", "Family Stability\nEconomic Mobility\nChild Opportunity\nCommunity Connection", "textarea"]],
+      fields: [["eyeb", "Label", "What We Do", "input"], ["items", "Items (one per line)", "Family Stability\nEconomic Mobility\nChild Opportunity\nCommunity Connection", "textarea"]],
       render: function (v) { return '<div class="content" style="gap:56px"><div class="eyeb">' + esc(v.eyeb) + '</div><ul class="list">' + v.items.split("\n").filter(Boolean).map(function (x, i) { return "<li><i>" + (i + 1) + "</i>" + hl(x) + "</li>"; }).join("") + '</ul></div>'; },
       caption: function (v) { return plain(v.eyeb) + ": " + v.items.split("\n").filter(Boolean).map(plain).join(", ") + ". foropportunity.org"; } },
     { id: "question", label: "Question", h: 1080, photo: false, light: true,
-      fields: [["eyeb", "Label", "Join the conversation", "input"], ["head", "Headline", "What do *families* need to thrive?", "textarea"], ["sub", "Supporting line", "Tell us in the comments.", "input"]],
+      fields: [["eyeb", "Label", "Join the conversation", "input"], ["head", "Headline", "What Do *Families* Need to Thrive?", "textarea"], ["sub", "Supporting line", "Tell us in the comments.", "input"]],
       render: function (v) { return '<img class="art" src="assets/backgrounds/light-arrow-square.svg" alt=""><div class="content" style="justify-content:center"><div class="eyeb">' + esc(v.eyeb) + '</div><div class="head" style="font-size:112px;color:#2F4F68">' + hl(v.head) + '</div><div class="sub">' + hl(v.sub) + '</div></div>'; },
       caption: function (v) { return plain(v.head) + " " + plain(v.sub); } },
     { id: "story", label: "Story 9:16", h: 1920, photo: true, light: false,
-      fields: [["eyeb", "Label", "BETTER WORK", "input"], ["head", "Headline", "A job can provide *purpose*, stability and a path forward.", "textarea"], ["sub", "Body", "We connect job-seekers with training, support services and career pathways through local partners.", "textarea"], ["cta", "Button", "Learn More", "input"]],
+      fields: [["eyeb", "Label", "BETTER WORK", "input"], ["head", "Headline", "A Job Can Provide *Purpose*, Stability and a Path Forward", "textarea"], ["sub", "Body", "We connect job-seekers with training, support services and career pathways through local partners.", "textarea"], ["cta", "Button", "Learn More", "input"]],
       render: function (v) { return '<div class="content" style="padding:200px 96px 300px;gap:48px"><div class="eyeb">' + esc(v.eyeb) + '</div><div class="head" style="font-size:104px">' + hl(v.head) + '</div><div class="sub">' + hl(v.sub) + '</div><div class="cta">' + esc(v.cta) + '</div></div>'; },
-      caption: function (v) { return plain(v.head) + " " + plain(v.sub) + " " + plain(v.cta) + " at foropportunity.org"; } }
+      caption: function (v) { return plain(v.head) + " " + plain(v.sub) + " " + plain(v.cta) + " at foropportunity.org"; } },
+    { id: "carousel", label: "Carousel 4:5", h: 1350, photo: false, light: false,
+      fields: [["eyeb", "Series label", "Benefit Cliffs", "input"], ["head", "Cover headline", "What Is a *Benefit Cliff*?", "textarea"],
+        ["slides", "Slides (one per paragraph: first line is the heading, the rest is the text)", "When a Raise Costs You\nA small pay increase can push a family just past an eligibility line, so they lose more in support than they gain in wages.\n\nWhy It Matters\nParents turn down raises and extra hours to protect their family's benefits. Work stops paying.\n\nA Better Path\nPhasing benefits out gradually lets families keep more of every raise as they move toward stability.", "textarea"],
+        ["end", "Closing headline", "Let's Make *Work Pay*", "textarea"], ["cta", "Button", "Learn More", "input"]],
+      slides: function (v) {
+        var body = String(v.slides).split(/\n\s*\n/).map(function (p) { return p.trim(); }).filter(Boolean);
+        var n = body.length + 2, pg = function (i) { return '<div class="pager">' + (i + 1) + ' / ' + n + '</div>'; }, out = [];
+        out.push('<div class="content" style="padding:140px 96px 300px;gap:44px"><div class="eyeb">' + esc(v.eyeb) + '</div><div class="head" style="font-size:112px">' + hl(v.head) + '</div><div class="swipe">Swipe <span aria-hidden="true">&rarr;</span></div></div>' + pg(0));
+        body.forEach(function (p, i) {
+          var lines = p.split("\n"), h = lines.shift(), t = lines.join("\n");
+          out.push('<div class="content" style="padding:140px 96px 300px;gap:40px;justify-content:center"><div class="num">' + ("0" + (i + 1)).slice(-2) + '</div><div class="head" style="font-size:80px">' + hl(h) + '</div>' + (t ? '<div class="sub" style="font-size:44px;max-width:880px">' + hl(t) + '</div>' : "") + '</div>' + pg(i + 1));
+        });
+        out.push('<div class="content" style="padding:140px 96px 300px;gap:56px;justify-content:center"><div class="head" style="font-size:104px">' + hl(v.end) + '</div><div class="cta">' + esc(v.cta) + '</div><div class="sub">foropportunity.org</div></div>' + pg(n - 1));
+        return out;
+      },
+      render: function (v) { return this.slides(v)[0]; },
+      caption: function (v) { return plain(v.head) + " " + String(v.slides).split(/\n\s*\n/).map(function (p) { return plain(p.split("\n")[0]); }).filter(Boolean).join(". ") + ". " + plain(v.cta) + " at foropportunity.org"; } }
   ];
-  var state = {}; TEMPLATES.forEach(function (t) { state[t.id] = { photo: null, v: {} }; t.fields.forEach(function (f) { state[t.id].v[f[0]] = f[2]; }); });
+  var state = {}; TEMPLATES.forEach(function (t) { state[t.id] = { photo: null, v: {}, slide: 0 }; t.fields.forEach(function (f) { state[t.id].v[f[0]] = f[2]; }); });
   var current = TEMPLATES[0], vp = $("#tpl-viewport");
 
-  function buildTpl(t) {
-    var s = state[t.id], el = document.createElement("div"), size = t.h > 1080 ? "story" : "square", bg = "";
-    el.className = "tpl t-" + t.id + (t.h > 1080 ? " tall" : "") + (t.light ? " light" : "");
-    if (!t.light) bg = (t.photo && s.photo) ? '<div class="bgimg" style="background-image:url(' + s.photo + ')"></div><div class="ov"></div><img class="art" src="assets/backgrounds/ring-overlay-' + size + '.svg" alt="">' : '<img class="art" src="assets/backgrounds/slate-ring-' + size + '.svg" alt="">';
-    el.innerHTML = bg + t.render(s.v) + logo(t.light);
+  function slideCount(t) { return t.slides ? t.slides(state[t.id].v).length : 1; }
+  function buildTpl(t, idx) {
+    var s = state[t.id], el = document.createElement("div"), bg = "";
+    el.className = "tpl t-" + t.id + (t.h === 1920 ? " tall" : t.h === 1350 ? " portrait" : "") + (t.light ? " light" : "");
+    /* the logo sits on these posts, so no ring art behind it */
+    if (!t.light && t.photo && s.photo) bg = '<div class="bgimg" style="background-image:url(' + s.photo + ')"></div><div class="ov"></div>';
+    var body = t.slides ? t.slides(s.v)[Math.min(idx == null ? s.slide : idx, slideCount(t) - 1)] : t.render(s.v);
+    el.innerHTML = bg + body + logo(t.light);
     return el;
   }
   function fit() { var sc = vp.clientWidth / 1080; vp.style.height = (current.h * sc) + "px"; if (vp.firstChild) vp.firstChild.style.transform = "scale(" + sc + ")"; }
   function altText() {
     var v = state[current.id].v, words = current.fields.map(function (f) { return plain(v[f[0]]); }).join(". ");
-    var bg = current.light ? "Off-white background with pale slate and peach arrow shapes." : (state[current.id].photo ? "Photo under a slate gradient with a white ring in the corner." : "Slate blue background with a white ring in the top corner.");
-    return "Graphic that reads: " + words + ". " + bg + " For Opportunity logo.";
+    if (current.slides) words = (current.slides(v).length) + "-slide carousel. " + words;
+    var bg = current.light ? "Off-white background with pale slate and peach arrow shapes." : (state[current.id].photo ? "Photo under a slate gradient." : "Solid slate blue background.");
+    return "Graphic that reads: " + words + ". " + bg + " Georgia Center for Opportunity logo.";
   }
-  function draw() { vp.innerHTML = ""; vp.appendChild(buildTpl(current)); fit(); vp.setAttribute("role", "img"); vp.setAttribute("aria-label", "Preview. " + altText()); }
+  function draw() {
+    var n = slideCount(current), s = state[current.id]; if (s.slide > n - 1) s.slide = n - 1;
+    vp.innerHTML = ""; vp.appendChild(buildTpl(current)); fit();
+    var nav = $("#tpl-slides"); nav.hidden = n < 2; $("#tpl-slide-n").textContent = "Slide " + (s.slide + 1) + " of " + n;
+    $("#tpl-download").textContent = n > 1 ? "Download all slides" : "Download PNG";
+    $("#tpl-prev").disabled = s.slide === 0; $("#tpl-next").disabled = s.slide >= n - 1; vp.setAttribute("role", "img"); vp.setAttribute("aria-label", "Preview. " + altText()); }
   function fields() {
     var host = $("#tpl-fields"); host.innerHTML = "";
     current.fields.forEach(function (f) {
@@ -222,23 +249,30 @@
   $("#tpl-download").addEventListener("click", function () {
     var st = $("#tpl-status");
     if (!window.html2canvas) { st.textContent = "The image tool is still loading. Try again in a moment."; return; }
-    st.textContent = "Rendering PNG…";
+    var n = slideCount(current), stamp = Date.now(), k = 0;
+    var next = function () { if (k < n) renderOne(k++).then(function () { setTimeout(next, 400); }); };
+    st.textContent = n > 1 ? "Rendering " + n + " slides…" : "Rendering PNG…";
+    next();
+    function renderOne(idx) {
     var holder = document.createElement("div"); holder.style.cssText = "position:fixed;left:-30000px;top:0;width:1080px;height:" + current.h + "px;overflow:hidden";
-    var el = buildTpl(current); holder.appendChild(el); document.body.appendChild(holder);
+    var el = buildTpl(current, idx); holder.appendChild(el); document.body.appendChild(holder);
     /* html2canvas mis-places text when body has a tall line-height, so neutralize it during export */
     var prevLH = document.body.style.lineHeight; document.body.style.lineHeight = "normal";
     var done = function () { document.body.style.lineHeight = prevLH; if (holder.parentNode) document.body.removeChild(holder); };
-    (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
+    return (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () {
       return window.html2canvas(el, { scale: 1, width: 1080, height: current.h, backgroundColor: null, useCORS: true, logging: false });
     }).then(function (canvas) {
       done();
       canvas.toBlob(function (blob) {
-        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "gco-" + current.id + "-" + Date.now() + ".png";
+        var a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "gco-" + current.id + "-" + stamp + (n > 1 ? "-" + ("0" + (idx + 1)).slice(-2) : "") + ".png";
         document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-        st.textContent = "Downloaded " + a.download + ".";
+        st.textContent = n > 1 ? "Downloaded slide " + (idx + 1) + " of " + n + "." : "Downloaded " + a.download + ".";
       }, "image/png");
     }).catch(function () { done(); st.textContent = "Couldn't render the image. Reload the page and try again."; });
+    }
   });
+  $("#tpl-prev").addEventListener("click", function () { state[current.id].slide--; draw(); });
+  $("#tpl-next").addEventListener("click", function () { state[current.id].slide++; draw(); });
   fields(); draw();
   if ("ResizeObserver" in window) new ResizeObserver(fit).observe(vp); else window.addEventListener("resize", fit);
 })();
