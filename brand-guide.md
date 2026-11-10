@@ -178,7 +178,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 - Partners: "You already serve your community. We bring proven programs and research so you can do more of what works."
 
 **Program descriptions**
-- Alliance for Opportunity, option 1: The Alliance for Opportunity (A4O) is a multi-state, nonprofit promoting effective federal and state reforms to refocus the safety net on work and lift more people out of poverty.
+- Alliance for Opportunity, option 1: The Alliance for Opportunity (A4O) is a multi-state, nonprofit coalition promoting effective federal and state reforms to refocus the safety net on work and lift more people out of poverty.
 - Alliance for Opportunity, option 2: The Alliance for Opportunity (A4O) is a multi-state, nonprofit coalition that works with state and federal leaders to transform the safety net from a fragmented system that merely manages poverty into an integrated system that restores work, family stability, dignity, and upward mobility.
 - Raising Highly Capable Kids: A free, 10-session program, offered in partnership with local organizations, that gives parents a supportive community and the tools to strengthen relationships and help their children grow into confident, caring, and capable adults.
 - BETTER WORK: A community-focused, partnership-based program that helps job-seekers build confidence, discover purpose, and develop the skills needed for steady, meaningful work.
@@ -277,7 +277,7 @@ Text on a 1080px-wide canvas (headlines, labels, buttons, and body text all in s
 ## 12. Guardrails
 
 - Accessibility: text meets Web Content Accessibility Guidelines (WCAG) AA contrast; orange or teal is never text on light backgrounds. Every image has alt text and every video has captions. Color is never the only way information is shown.
-- Claims and data: every number has a source and a year we can link to. Write "helped" or "contributed to," never "caused," unless a study shows it.
+- Claims and data: every number has a source and a year we can link to. Write "helped" or "contributed to," never "caused," unless a study shows it. On social posts, cite the source in the caption; it doesn't need to appear on the graphic.
 - Stories and consent: first names only, with a signed release on file. Anyone under 18 needs written guardian consent and is never named in full. Quotes can be trimmed for length but never changed in meaning.
 - Nonpartisan: as a 501(c)(3), we never endorse or oppose candidates or parties. We can discuss legislation and policy. When in doubt, ask before you post.
 - Private information: donor records, participant details, children's information, and anything confidential stay out of AI tools, per GCO's AI use policy. If someone shares them with you, point this out and suggest they check with the Communications team.

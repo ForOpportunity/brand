@@ -23,4 +23,4 @@ The site's copy and examples must follow the GCO style guide rules in the Writin
 
 ## Checking a change
 
-Run `python3 -m http.server` in the repo root, open the page, and check the browser console for errors. For social template changes, call `GCOSocial.checkPost(GCOSocial.defaultPost(id))` for each template: the default text shouldn't trigger brand-check warnings, apart from the source that the big stat example leaves out on purpose.
+Run `python3 -m http.server` in the repo root, open the page, and check the browser console for errors. For social template changes, call `GCOSocial.checkPost(GCOSocial.defaultPost(id))` for each template: the default text shouldn't trigger any brand-check warnings.

@@ -65,8 +65,8 @@
   S.TEMPLATES = [
     { id: "stat", label: "Big stat", sizes: ["square", "portrait", "story", "link"], backgrounds: ["slate", "photo", "light"], photo: true,
       fields: [f("eyeb", "Label", "input", { case: "sentence", max: 40 }), f("stat", "Number", "input", { max: 8 }),
-               f("head", "Headline", "textarea", { case: "sentence", max: 110, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. Institute for Justice, 2026" })],
-      defaults: { eyeb: "Occupational Licensing Index", stat: "#31", head: "Georgia's rank in 2026. How many *barriers* stand between Georgians and work?", source: "" } },
+               f("head", "Headline", "textarea", { case: "sentence", max: 110, hl: true }), f("source", "Source and year", "input", { required: true, max: 80, hint: "e.g. Archbridge Institute, 2026" })],
+      defaults: { eyeb: "Occupational Licensing Index", stat: "#31", head: "Georgia's rank in 2026. How many *barriers* stand between Georgians and work?", source: "Archbridge Institute, 2026" } },
     { id: "quote", label: "Quote", sizes: ["square", "portrait", "story", "link"], backgrounds: ["light", "slate", "photo"], photo: true,
       fields: [f("q", "Quote", "textarea", { case: "sentence", max: 200, hl: true }), f("who", "Name", "input", { max: 40, hint: "First name only, with a signed release" }), f("role", "Program or role", "input", { max: 50 })],
       defaults: { q: "This workshop doesn't just teach parenting tips. It *transforms* the way you connect with your kids.", who: "RHCK graduate", role: "Raising Highly Capable Kids" } },
