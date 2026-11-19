@@ -86,7 +86,7 @@ Centered or left aligned? Match the alignment of the layout around it.
 
 **Rules**
 - Clear space: the height of the "O" in Opportunity on every side.
-- Minimum size: 160px wide on screen, 1.5 in wide in print.
+- Minimum size: 160px wide on screen, 1.5 in wide in print. Below that, "Georgia" can't be read.
 - Backgrounds: a clear area of white, off-white, navy, slate, or a dark photo. Never over the ring (the "O" shape) or other artwork.
 - Don't stretch, squash, rotate, or recolor it, add shadows or effects, or place it on a mid-tone or low-contrast background.
 
@@ -132,7 +132,7 @@ Balance: mostly off-white and white (about 55%), slate for type and structure (a
 - **When Inter isn't available** (Mailchimp, PowerPoint, Google Slides): Helvetica, with the same sizes and weights (Bold for headlines, Regular for body). Use Arial where Helvetica isn't installed, as in PowerPoint on Windows. Don't use Open Sans or Novecento.
 - Headlines: Semibold, tracking −0.027em, line height 1.1–1.2. Body: Regular, line height about 1.6. Avoid all caps except very short labels.
 - **Capitalization:** sentence case for everything: titles, subtitles, headlines, H2s and H3s, buttons, and labels, in documents, reports, web pages, emails, slides, flyers, signage, and social graphics, e.g. "Learn more about our work." Capitalize just the first word of each phrase plus proper nouns (people, places, organizations, laws, and programs, e.g. BETTER WORK, Raising Highly Capable Kids). Formal titles are capitalized only before a name; "Congress" is capitalized but "congressional" isn't.
-- Type scale (web): Display 56–84px/600; H2 40–52px/600; H3 24–28px/600; Lead 20px/400; Body 16–17px/400; Button 16px/500; Label 13px/600.
+- Type scale (web, size / weight / line height): Display 56–84px / 600 / 1.06; H2 40–52px / 600 / 1.1; H3 24–28px / 600 / 1.2; Lead 20px / 400 / 1.55; Body 16–17px / 400 / 1.65; Button 16px / 500; Label 13px / 600.
 
 ## 6. Voice
 
@@ -216,7 +216,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 
 **Headlines, links, and voice**
 - Sentence case for all document titles and subtitles and for web page titles: capitalize just the first word in each phrase unless it's a proper noun. This applies to designed pieces too (reports, slides, flyers, social graphics).
-- Link descriptive words like "learn more" or "read the report," never "click here."
+- Link descriptive words like "learn more" or "read the report," never "click here." Screen reader users rely on link text.
 - Use active voice whenever you can.
 
 **Programs and classes**
@@ -234,21 +234,35 @@ Real Georgians in real moments. Natural color, rounded corners (20px), room to b
 - Natural and warm: daylight, true color, and candid expressions. No heavy filters, duotones, or color tints.
 - Room for words: where text sits on a photo, add a slate gradient from the bottom, never a flat color wash.
 - Do show parents and children together, people at work, Georgia places (main streets, classrooms, churches, community centers), and the range of ages, races, family shapes, and places we serve.
-- Don't show people as helpless or in distress, children's faces without a guardian's written consent, or staged stock poses. Never present an AI or stock image as a real participant.
-- AI images: label them as illustrative, and never pair one with a real person's name or quote.
+- Don't show people as helpless or in distress, children's faces without a guardian's written consent, or staged stock poses like thumbs up or handshakes to camera. Never present an AI or stock image as a real participant.
+- AI images: label them as illustrative, and never pair one with a real person's name or quote. Prompt template:
 
-## 10. Visual language and background art
+> Candid documentary photo, natural daylight, true color, [SUBJECT: e.g. parents talking around a table at an evening workshop] in [GEORGIA SETTING: e.g. a church fellowship hall in a small town], genuine expressions, relaxed body language, warm neutral tones, soft background, open space in the [top/right] third for text, no logos, no text, no posed smiles at camera, 35mm, editorial style.
+
+## 10. Visual language, background art, and motion
 
 Soft, open, and orderly: generous off-white space, 20px corners, thin borders, and a few warm accents.
 
 - The ring: a thick white ring kept very light (26% fading to 5% opacity), entering from the top-right corner. Our signature on slate. Never behind the logo.
 - The arrow: pale slate and peach bands stacking into an upward arrow. Our signature on light backgrounds.
-- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, cropped by the frame. Don't recolor, rotate, flip, or tile them.
+- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, always cropped by the edge of the frame. Don't recolor, rotate, or flip them, stack copies, or tile them as a pattern. Scale them proportionally.
+- Background art files (SVG and PNG, in four common sizes): https://brand.foropportunity.org/assets/downloads/gco-background-pack.zip
 - The orange underline: under one key word per headline, never the whole line.
 - Teal quote marks open testimonials.
-- Spacing on an 8px rhythm (8, 16, 20, 32, 48, 64). Corners: 20px default, 8px small chips, 32px large panels. Cards are white with a 1px border, never drop shadows.
-- Icons: simple line icons, rounded ends, 1.5–2px stroke at 24px, slate on teal-tint tiles. Don't mix icon sets.
-- Motion: calm and unhurried. Text rises into place; nothing bounces or spins. Respect reduced-motion settings. In video, keep captions on screen for at least three seconds.
+- Spacing on an 8px rhythm (8, 16, 20, 32, 48, 64). On the web: 20px between widgets, a 1200px content width, and 64–120px of vertical padding per section. Corners: 20px default, 8px small chips, 32px large panels. Cards are white with a 1px border, never drop shadows.
+- Icons: simple line icons, rounded ends, 1.5–2px stroke at 24px, slate on teal-tint tiles. Phosphor (Regular) and Lucide both pair well with Inter. Don't mix icon sets in one piece.
+
+**Motion.** Calm and unhurried. Text rises into place, the orange line draws in, and the ring drifts in from its corner. Nothing bounces or spins.
+
+| Moment | Duration | Easing | Notes |
+| --- | --- | --- | --- |
+| Headline rise | 600ms | cubic-bezier(0.2, 0.7, 0.2, 1) | Moves up 20px while fading in |
+| Orange line | 500ms, 350ms delay | same | Grows from the left |
+| Supporting line | 600ms, 500ms delay | same | Follows the line |
+| Ring or arrow | 1000ms | ease-out | Fades in while drifting 40px from its corner |
+| Hover on buttons and cards | 250ms | ease | Color and border change only, no movement |
+
+Respect reduced-motion settings by showing the final frame. In video, keep captions on screen for at least three seconds.
 
 ## 11. Social media
 
