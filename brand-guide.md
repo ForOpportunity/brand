@@ -86,7 +86,7 @@ Centered or left aligned? Match the alignment of the layout around it.
 
 **Rules**
 - Clear space: the height of the "O" in Opportunity on every side.
-- Minimum size: 160px wide on screen, 1.5 in wide in print.
+- Minimum size: 160px wide on screen, 1.5 in wide in print. Below that, "Georgia" can't be read.
 - Backgrounds: a clear area of white, off-white, navy, slate or a dark photo. Never over the ring (the "O" shape) or other artwork.
 - Don't stretch, squash, rotate or recolor it, add shadows or effects, or place it on a mid-tone or low-contrast background.
 
@@ -132,7 +132,7 @@ Balance: mostly off-white and white (about 55%), slate for type and structure (a
 - **When Inter isn't available** (Mailchimp, PowerPoint, Google Slides): Helvetica, with the same sizes and weights (Bold for headlines, Regular for body). Use Arial where Helvetica isn't installed, as in PowerPoint on Windows. Don't use Open Sans or Novecento.
 - Headlines: Semibold, tracking −0.027em, line height 1.1–1.2. Body: Regular, line height about 1.6. Avoid all caps except very short labels.
 - **Capitalization:** Title Case for titles and headlines in designed pieces (display text, H2, H3, buttons and labels on social graphics, slides, flyers, signage and email buttons), e.g. "Learn More About Our Work." Sentence case for leads and body text everywhere, and for titles of written pieces (documents, reports, articles, web page titles), e.g. "How benefit cliffs hold families back."
-- Type scale (web): Display 56–84px/600; H2 40–52px/600; H3 24–28px/600; Lead 20px/400; Body 16–17px/400; Button 16px/500; Label 13px/600.
+- Type scale (web, size / weight / line height): Display 56–84px / 600 / 1.06; H2 40–52px / 600 / 1.1; H3 24–28px / 600 / 1.2; Lead 20px / 400 / 1.55; Body 16–17px / 400 / 1.65; Button 16px / 500; Label 13px / 600.
 
 ## 6. Voice
 
@@ -216,7 +216,7 @@ We sound like a neighbor who has done the research: warm about people and precis
 
 **Headlines, links and voice**
 - Sentence case for document titles and subtitles and for web page titles. Designed pieces use Title Case (see Typography).
-- Link descriptive words like "learn more" or "read the report," never "click here."
+- Link descriptive words like "learn more" or "read the report," never "click here." Screen reader users rely on link text.
 - Use active voice whenever you can.
 
 **Programs and classes**
@@ -234,20 +234,36 @@ Real Georgians in real moments. Natural color, rounded corners (20px), room to b
 - Natural and warm: daylight, true color, candid expressions. No heavy filters, duotones or color tints.
 - Room for words: where text sits on a photo, add a slate gradient from the bottom, never a flat color wash.
 - Do show parents and children together, people at work, Georgia places (main streets, classrooms, churches, community centers), and the range of ages, races, family shapes and places we serve.
-- Don't show people as helpless or in distress, children's faces without a guardian's written consent, or staged stock poses. Never present an AI or stock image as a real participant.
+- Don't show people as helpless or in distress, children's faces without a guardian's written consent, or staged stock poses like thumbs up or handshakes to camera. Never present an AI or stock image as a real participant.
 
-## 10. Visual language and background art
+**Illustrative AI images.** Label them as illustrative, and never pair one with a real person's name or quote. Prompt template:
+
+> Candid documentary photo, natural daylight, true color, [SUBJECT: e.g. parents talking around a table at an evening workshop] in [GEORGIA SETTING: e.g. a church fellowship hall in a small town], genuine expressions, relaxed body language, warm neutral tones, soft background, open space in the [top/right] third for text, no logos, no text, no posed smiles at camera, 35mm, editorial style.
+
+## 10. Visual language, background art and motion
 
 Soft, open and orderly: generous off-white space, 20px corners, thin borders and a few warm accents.
 
 - The ring: a thick white ring kept very light (26% fading to 5% opacity), entering from the top-right corner. Our signature on slate. Never behind the logo.
 - The arrow: pale slate and peach bands stacking into an upward arrow. Our signature on light backgrounds.
-- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, cropped by the frame. Don't recolor, rotate, flip or tile them.
+- Use the ring or the arrow, never both. Anchor the ring to the top-right corner and the arrow to the right edge, always cropped by the edge of the frame. Don't recolor, rotate or flip them, stack copies or tile them as a pattern. Scale them proportionally.
+- Background art files (SVG and PNG, in four common sizes): https://brand.foropportunity.org/assets/downloads/gco-background-pack.zip
 - The orange underline: under one key word per headline, never the whole line.
 - Teal quote marks open testimonials.
-- Spacing on an 8px rhythm (8, 16, 20, 32, 48, 64). Corners: 20px default, 8px small chips, 32px large panels. Cards are white with a 1px border, never drop shadows.
-- Icons: simple line icons, rounded ends, 1.5–2px stroke at 24px, slate on teal-tint tiles. Don't mix icon sets.
-- Motion: calm and unhurried. Text rises into place; nothing bounces or spins. Respect reduced-motion settings.
+- Spacing on an 8px rhythm (8, 16, 20, 32, 48, 64). On the web: 20px between widgets, a 1200px content width and 64–120px of vertical padding per section. Corners: 20px default, 8px small chips, 32px large panels. Cards are white with a 1px border, never drop shadows.
+- Icons: simple line icons, rounded ends, 1.5–2px stroke at 24px, slate on teal-tint tiles. Phosphor (Regular) and Lucide both pair well with Inter. Don't mix icon sets in one piece.
+
+**Motion.** Calm and unhurried. Text rises into place, the orange line draws in, and the ring drifts in from its corner. Nothing bounces or spins.
+
+| Moment | Duration | Easing | Notes |
+| --- | --- | --- | --- |
+| Headline rise | 600ms | cubic-bezier(0.2, 0.7, 0.2, 1) | Moves up 20px while fading in |
+| Orange line | 500ms, 350ms delay | same | Grows from the left |
+| Supporting line | 600ms, 500ms delay | same | Follows the line |
+| Ring or arrow | 1000ms | ease-out | Fades in while drifting 40px from its corner |
+| Hover on buttons and cards | 250ms | ease | Color and border change only, no movement |
+
+Respect reduced-motion settings by showing the final frame. In video, keep captions on screen for at least 3 seconds.
 
 ## 11. Social media
 
@@ -271,13 +287,15 @@ Text on a 1080px-wide canvas (headlines, labels and buttons in Title Case; body 
 - Editable templates are at https://brand.foropportunity.org/#social: big stat, quote, pillars, question, call to action and carousel. Each comes in square, portrait, story and LinkedIn link sizes, on a slate, off-white or photo background. Downloads come as a PNG, every size as a zip, or for carousels every slide as a zip or a PDF for LinkedIn.
 - The editor runs brand checks as you type (words to avoid, word list, names, numbers, capitalization, missing sources, character limits). Fix every "Fix before posting" item before publishing.
 - Program presets fill in approved copy for BETTER WORK, Raising Highly Capable Kids and the Alliance for Opportunity. Drafts can be saved in the browser or shared as a link (photos aren't included in links).
+- Current posts use a navy and gold palette with Poppins headlines, which differs from the website. New work uses the website system above. Until the switch, finish any series that's already running in its current style.
 
 ## 12. Guardrails
 
 - Accessibility: text meets WCAG AA contrast; orange or teal is never text on light backgrounds. Every image has alt text and every video has captions. Color is never the only way information is shown.
 - Claims and data: every number has a source and a year we can link to. Write "helped" or "contributed to," never "caused," unless a study shows it.
 - Stories and consent: first names only, with a signed release on file. Anyone under 18 needs written guardian consent and is never named in full. Quotes can be trimmed for length but never changed in meaning.
-- Nonpartisan: as a 501(c)(3), we never endorse or oppose candidates or parties. We can discuss legislation and policy.
+- Nonpartisan: as a 501(c)(3), we never endorse or oppose candidates or parties. We can discuss legislation and policy. When in doubt, ask before you post.
+- Private information: this guide is public and fine to share with AI tools. Donor records, participant details, children's information and anything confidential are not. Follow GCO's AI use policy.
 - Files and fonts: use only the logo files from this guide. Inter is free for partners and vendors; otherwise use Helvetica (Arial on Windows).
 
 **Ready to publish?**
