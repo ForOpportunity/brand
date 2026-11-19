@@ -248,14 +248,14 @@
   var RHCK_QUOTE = "This workshop doesn't just teach parenting tips. It *transforms* the way you connect with your kids.";
   var PRESET_COPY = {
     betterwork: { label: "BETTER WORK", role: "BETTER WORK",
-      cta: { head: "A Job Can Provide *Purpose*, Stability and a Path Forward", sub: "We connect job-seekers with training, support services and career pathways through local partners.", cta: "Learn More" },
-      pillars: "Build Confidence\nDiscover Purpose\nDevelop Skills\nSteady, Meaningful Work" },
+      cta: { head: "A job can provide *purpose*, stability, and a path forward", sub: "We connect job-seekers with training, support services, and career pathways through local partners.", cta: "Learn more" },
+      pillars: "Build confidence\nDiscover purpose\nDevelop skills\nSteady, meaningful work" },
     rhck: { label: "Raising Highly Capable Kids", role: "Raising Highly Capable Kids",
-      cta: { head: "A Free, 10-Session Program for *Parents*", sub: "Gives parents a supportive community and the tools to strengthen relationships and help their children grow into confident, caring, and capable adults.", cta: "Learn More" },
-      pillars: "A Free, 10-Session Program\nA Supportive Community\nTools to Strengthen Relationships\nIn Partnership With Local Organizations" },
+      cta: { head: "A free, 10-session program for *parents*", sub: "Gives parents a supportive community and the tools to strengthen relationships and help their children grow into confident, caring, and capable adults.", cta: "Learn more" },
+      pillars: "A free, 10-session program\nA supportive community\nTools to strengthen relationships\nIn partnership with local organizations" },
     a4o: { label: "Alliance for Opportunity", role: "Alliance for Opportunity",
-      cta: { head: "Refocus the Safety Net on *Work*", sub: "A multi-state, nonprofit coalition that works with state and federal leaders.", cta: "Learn More" },
-      pillars: "Work\nFamily Stability\nDignity\nUpward Mobility" }
+      cta: { head: "Refocus the safety net on *work*", sub: "A multi-state, nonprofit coalition that works with state and federal leaders.", cta: "Learn more" },
+      pillars: "Work\nFamily stability\nDignity\nUpward mobility" }
   };
   function stock(tid, key) {
     var t = S.template(tid), vals = [""];
@@ -280,9 +280,9 @@
       if (tid === "pillars" && replaceable(p, "items")) F.items = c.pillars;
       if (tid === "quote") {
         if (replaceable(p, "role")) F.role = c.role;
-        if (id === "rhck") { if (!F.q.trim()) { F.q = RHCK_QUOTE; if (!F.who.trim()) F.who = "RHCK Graduate"; } }
+        if (id === "rhck") { if (!F.q.trim()) { F.q = RHCK_QUOTE; if (!F.who.trim()) F.who = "RHCK graduate"; } }
         /* the stock quote is from an RHCK graduate: never leave it under another program */
-        else if (F.q === RHCK_QUOTE) { F.q = ""; if (F.who === "RHCK Graduate") F.who = ""; }
+        else if (F.q === RHCK_QUOTE) { F.q = ""; if (F.who === "RHCK Graduate" || F.who === "RHCK graduate") F.who = ""; }
       }
       if (tid === "carousel") p.slides.forEach(function (s) { if (s.type === "quote" && own(s.fields, "role") && replaceable({ template: "quote", fields: s.fields }, "role")) s.fields.role = c.role; });
       p.preset = id;
